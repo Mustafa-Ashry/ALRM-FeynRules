@@ -9,5 +9,5 @@ This repository contains the following material
 4. UFO, CalcHEP, FeynArts, SHERPA and WHIZARD model files (ALRM_LO_UFO, _CH, _FA, _SH, _WH, _WO, _MD).
 
 Please cite
-1. M.Ashry and S. Khalil, Phenomenological aspects of a TeV-scale alternative left-right model, Phys. Rev. D 91, 015009
+1. M. Ashry and S. Khalil, Phenomenological aspects of a TeV-scale alternative left-right model, Phys. Rev. D 91, 015009
 2. M. Ashry, MSc Thesis, Cairo University (2015) [https://inspirehep.net/literature/2708563]
