@@ -27,8 +27,8 @@ M$Information = {
  (* ************************** *) 
 (* v1.01 14.12.16 : Implemented with broken SU(2)_R symmetry and model-dependent Higgs diagonolization matrix *)
 (* v1.02 14.12.17 : Restored the SU(2)_R symmetry into left-right symmetry *)
-(* v1.03 14.12.18 : Added the the model-dependent hgammagamma and hgg effective Lagrangian *)
-(* v1.04 14.12.19 : Added the Higgs diagonolization and the hgammagamma and hgg effective Lagrangian generically and model-independent *)
+(* v1.03 14.12.18 : Added the the model-dependent hYY and hgg effective Lagrangian *)
+(* v1.04 14.12.19 : Added the Higgs diagonolization and the hYY and hgg effective Lagrangian generically and model-independent *)
 (* v1.05 14.03.24 : Added the generic gauge bosons diagonolization and taking the left and right SU(2) gauge couplings (gL and gR), left and right CKM matrices (CKM and CKMR) and left and right MNS matrices (MNS and MNSR) NOT equal in general, i.e., generically, nonmanifest left-right symmetry *)
 (* v1.06 14.12.24 : To Add the seesaw mechanism for neutrino masses(?) *)
 
