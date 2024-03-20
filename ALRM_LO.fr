@@ -452,7 +452,7 @@ M$ClassesDescription = {
     SelfConjugate  -> False,
     QuantumNumbers -> {BL -> 1/6},
     Definitions    -> { QL[sp1_,1,ff_,cc_] :> Module[{sp2}, ProjM[sp1,sp2] uq[sp2,ff,cc]], 
-			QL[sp1_,2,ff_,cc_] :> Module[{sp2,ff2}, CKML[ff,ff2] ProjM[sp1,sp2] dq[sp2,ff2,cc]] }  },
+			 QL[sp1_,2,ff_,cc_] :> Module[{sp2,ff2}, CKML[ff,ff2] ProjM[sp1,sp2] dq[sp2,ff2,cc]] }  },
   F[16] == {
     ClassName      -> QR, 
     Unphysical     -> True, 
@@ -461,7 +461,7 @@ M$ClassesDescription = {
     SelfConjugate  -> False,
     QuantumNumbers -> {BL -> 1/6},
     Definitions    -> { QR[sp1_,1,ff_,cc_] :> Module[{sp2}, ProjP[sp1,sp2] uq[sp2,ff,cc]], 
-		      	 QR[sp1_,2,ff_,cc_] :> Module[{sp2,ff2}, CKMR[ff,ff2] ProjP[sp1,sp2] ddq[sp2,ff2,cc]] }  },
+			 QR[sp1_,2,ff_,cc_] :> Module[{sp2,ff2}, CKMR[ff,ff2] ProjP[sp1,sp2] ddq[sp2,ff2,cc]] }  },
   F[17] == {
     ClassName      -> dR, 
     Unphysical     -> True, 
@@ -577,8 +577,8 @@ M$ClassesDescription = {
     ClassName       -> G10,
     SelfConjugate   -> True,
     Goldstone       -> Z,
-    Mass            -> {MZ,91.1876},
-    Width           -> {WZ,2.52},
+    Mass            -> 0.,
+    Width           -> 0.,
     PropagatorLabel -> "G1o",
     PropagatorType  -> D,
     PropagatorArrow -> None,
@@ -589,8 +589,8 @@ M$ClassesDescription = {
     ClassName       -> G20,
     SelfConjugate   -> True,
     Goldstone       -> Zp,
-    Mass            -> {MZp,Internal},
-    Width           -> {WZp,16.7},
+    Mass            -> 0.,
+    Width           -> 0.,
     PropagatorLabel -> "G2o",
     PropagatorType  -> D,
     PropagatorArrow -> None,
@@ -601,8 +601,8 @@ M$ClassesDescription = {
     ClassName        -> GP1,
     SelfConjugate    -> False,
     Goldstone        -> W,
-    Mass             -> {MW,80.385},
-    Width            -> {WW,2.11},
+    Mass             -> 0.,
+    Width            -> 0.,
     QuantumNumbers   -> {Q -> 1},
     PropagatorLabel  -> "GP1",
     PropagatorType   -> D,
@@ -615,8 +615,8 @@ M$ClassesDescription = {
     ClassName        -> GM2,
     SelfConjugate    -> False,
     Goldstone        -> Wp,
-    Mass             -> {MWp,Internal},
-    Width            -> {WWp,6.33},
+    Mass             -> 0.,
+    Width            -> 0.,
     QuantumNumbers   -> {Q -> -1},
     PropagatorLabel  -> "GM2",
     PropagatorType   -> D,
@@ -634,7 +634,7 @@ M$ClassesDescription = {
     SelfConjugate  -> False,
     QuantumNumbers -> {BL -> 0},
     Definitions    -> { Phi[1,1] -> (H1 +I A1)/Sqrt[2], Phi[1,2] -> (cb HP1 +sb GP1), Phi[2,1] -> cz HM2 + sz GM2, 
-			Phi[2,2] -> (k+THP0 H0+THP2 H2+THP3 H3+I((1/Sqrt[1+tb^2+tz^2])A2-(tz/Sqrt[1+tz^2])G10+(tb/Sqrt[(1+tz^2)(1+tb^2+tz^2)])G20))/Sqrt[2] }  },
+			 Phi[2,2] -> (k+THP0 H0+THP2 H2+THP3 H3+I((1/Sqrt[1+tb^2+tz^2])A2-(tz/Sqrt[1+tz^2])G10+(tb/Sqrt[(1+tz^2)(1+tb^2+tz^2)])G20))/Sqrt[2] }  },
   S[141] == {
     ClassName      -> ChiL, 
     Unphysical     -> True, 
@@ -642,7 +642,7 @@ M$ClassesDescription = {
     SelfConjugate  -> False,
     QuantumNumbers -> {BL -> 1/2},
     Definitions    -> { ChiL[1] -> (-sb HP1 + cb GP1) , 
-			ChiL[2] -> (vL+THL0 H0+THL2 H2+THL3 H3 + I ((-tb/Sqrt[1+tb^2+tz^2]) A2 +(Sqrt[(1+tz^2)/(1+tb^2+tz^2)]) G20))/Sqrt[2]}  },
+			 ChiL[2] -> (vL+THL0 H0+THL2 H2+THL3 H3 + I ((-tb/Sqrt[1+tb^2+tz^2]) A2 +(Sqrt[(1+tz^2)/(1+tb^2+tz^2)]) G20))/Sqrt[2]}  },
   S[151] == {
     ClassName      -> ChiR, 
     Unphysical     -> True, 
@@ -650,7 +650,7 @@ M$ClassesDescription = {
     SelfConjugate  -> False,
     QuantumNumbers -> {BL -> 1/2},
     Definitions    -> { ChiR[1] -> -sz HM2bar + cz GM2bar, 
-			ChiR[2] -> (vR+THR0 H0+THR2 H2+THR3 H3+I ((tz/Sqrt[1+tb^2+tz^2])A2 +(1/Sqrt[1+tz^2])G10+(tb tz/Sqrt[(1+tz^2)(1+tb^2+tz^2)])G20))/Sqrt[2]}  }	};
+			 ChiR[2] -> (vR+THR0 H0+THR2 H2+THR3 H3+I ((tz/Sqrt[1+tb^2+tz^2])A2 +(1/Sqrt[1+tz^2])G10+(tb tz/Sqrt[(1+tz^2)(1+tb^2+tz^2)])G20))/Sqrt[2]}  }	};
 
  (* ************************** *) 
  (* *****     Gauge      ***** *) 
@@ -1038,21 +1038,21 @@ M$Parameters = {
   sR12 == {
     ParameterType -> External,
     BlockName     -> CKMBLOCK,
-    OrderBlock    -> 4,
+    OrderBlock    -> 7,
     Value         -> 0.225,
     TeX           -> Subscript[sR,12],
     Description   -> "Right Quark mixing: SinThetaR12,PDG-194"},
   sR23 == {
     ParameterType -> External,
     BlockName     -> CKMBLOCK,
-    OrderBlock    -> 5,
+    OrderBlock    -> 8,
     Value         -> 0.040,
     TeX           -> Subscript[sR,23],
     Description   -> "Right Quark mixing: SinThetaR23,PDG-194"},
   sR13 == {
     ParameterType -> External,
     BlockName     -> CKMBLOCK,
-    OrderBlock    -> 6,
+    OrderBlock    -> 9,
     Value         -> 0.0035,
     TeX           -> Subscript[sR,13],
     Description   -> "Right Quark mixing: SinThetaR13,PDG-194"},
@@ -1062,21 +1062,21 @@ M$Parameters = {
   cL12 == {
     ParameterType -> Internal,
     BlockName     -> CKMBLOCK,
-(*    OrderBlock    -> 4,*)
+    OrderBlock    -> 4,
     Value         -> Sqrt[1-sL12^2],
     TeX           -> Subscript[cL,12],
     Description   -> "Quark mixing: CosTheta12,PDG-94"},
   cL23 == {
     ParameterType -> Internal,
     BlockName     -> CKMBLOCK,
-(*    OrderBlock    -> 5,*)
+    OrderBlock    -> 5,
     Value         -> Sqrt[1-sL23^2],
     TeX           -> Subscript[cL,23],
     Description   -> "Quark mixing: CosTheta23,PDG-94"},
   cL13 == {
     ParameterType -> Internal,
     BlockName     -> CKMBLOCK,
-(*    OrderBlock    -> 6,*)
+    OrderBlock    -> 6,
     Value         -> Sqrt[1-sL13^2],
     TeX           -> Subscript[cL,13],
     Description   -> "Quark mixing: CosTheta13,PDG-94"},
@@ -1084,21 +1084,21 @@ M$Parameters = {
   cR12 == {
     ParameterType -> Internal,
     BlockName     -> CKMBLOCK,
-(*    OrderBlock    -> 4,*)
+    OrderBlock    -> 10,
     Value         -> Sqrt[1-sR12^2],
     TeX           -> Subscript[cR,12],
     Description   -> "Right Quark mixing: CosThetaR12,PDG-194"},
   cR23 == {
     ParameterType -> Internal,
     BlockName     -> CKMBLOCK,
-(*    OrderBlock    -> 5,*)
+    OrderBlock    -> 11,
     Value         -> Sqrt[1-sR23^2],
     TeX           -> Subscript[cR,23],
     Description   -> "Right Quark mixing: CosThetaR23,PDG-194"},
   cR13 == {
     ParameterType -> Internal,
     BlockName     -> CKMBLOCK,
-(*    OrderBlock    -> 6,*)
+    OrderBlock    -> 12,
     Value         -> Sqrt[1-sR13^2],
     TeX           -> Subscript[cR,13],
     Description   -> "Right Quark mixing: CosThetaR13,PDG-194"},
@@ -1167,7 +1167,7 @@ M$Parameters = {
     ParameterType    -> Internal,
     Definitions      -> {gL->ee/sw},
     InteractionOrder -> {QED,1},
-    TeX              -> Subscript[g,w],
+    TeX              -> Subscript[g,L],
     Description      -> "Weak coupling constant at the Z pole"  },
   gBL == {
     ParameterType    -> Internal,
@@ -1615,10 +1615,10 @@ M$Parameters = {
     ParameterType    -> Internal,
     Indices          -> {Index[bjorkeneff]},
     Value            -> {FP[1]:>Module[{},2(xf+(xf-1)ArcSin[Sqrt[xf]]^2) xf^(-2)/.xf->XP[1]],
-			 FP[2]:>Module[{},-(2xv^2+3xv+3(2xv-1)ArcSin[Sqrt[xv]]^2) xv^(-2)/.xv->XP[2]],
-			 FP[3]:>Module[{},-(2xv^2+3xv+3(2xv-1)ArcSin[Sqrt[xv]]^2) xv^(-2)/.xv->XP[3]],
-			 FP[4]:>Module[{},-(xs-ArcSin[Sqrt[xs]]^2) xs^(-2)/.xs->XP[4]],
-			 FP[5]:>Module[{},-(xs-ArcSin[Sqrt[xs]]^2) xs^(-2)/.xs->XP[5]]},
+			  FP[2]:>Module[{},-(2xv^2+3xv+3(2xv-1)ArcSin[Sqrt[xv]]^2) xv^(-2)/.xv->XP[2]],
+			  FP[3]:>Module[{},-(2xv^2+3xv+3(2xv-1)ArcSin[Sqrt[xv]]^2) xv^(-2)/.xv->XP[3]],
+			  FP[4]:>Module[{},-(xs-ArcSin[Sqrt[xs]]^2) xs^(-2)/.xs->XP[4]],
+			  FP[5]:>Module[{},-(xs-ArcSin[Sqrt[xs]]^2) xs^(-2)/.xs->XP[5]]},
     InteractionOrder -> {QED,0},
     TeX              -> fp,
     Description      -> "Loop functions"  },
@@ -1636,10 +1636,10 @@ M$Parameters = {
     ParameterType    -> Internal,
     Indices          -> {Index[bjorkeneff]},
     Value            -> {LP[1]:>Module[{}, (3)(2/3)^2 (THP0/sb) ff/.ff->FP[1]],
-			 LP[2]:>Module[{}, (THP0 sb+THL0 cb) fv/.fv->FP[2]],
-			 LP[3]:>Module[{}, (vev/vp)(THP0 sz+THR0 cz) fv/.fv->FP[3]],
-			 LP[4]:>Module[{}, (-mu11 vev/MP[4]^2) fs/.fs->FP[4]],
-			 LP[5]:>Module[{}, (-mu22 vev/MP[5]^2) fs/.fs->FP[5]]},
+			  LP[2]:>Module[{}, (THP0 sb+THL0 cb) fv/.fv->FP[2]],
+			  LP[3]:>Module[{}, (vev/vp)(THP0 sz+THR0 cz) fv/.fv->FP[3]],
+			  LP[4]:>Module[{}, (-mu11 vev/MP[4]^2) fs/.fs->FP[4]],
+			  LP[5]:>Module[{}, (-mu22 vev/MP[5]^2) fs/.fs->FP[5]]},
     InteractionOrder -> {QED,0},
     TeX              -> Subscript[\[Lambda],hpp],
     Description      -> "loop-induced higgs Couplings"  },
