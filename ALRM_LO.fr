@@ -47,21 +47,21 @@ M$GaugeGroups = {
     Abelian          -> True,  
     CouplingConstant -> gBL, 
     GaugeBoson       -> B, 
-    Charge           -> BL  },
+    Charge           -> BL },
   SU2L == {
     Abelian           -> False, 
     CouplingConstant  -> gL, 
     GaugeBoson        -> Wi, 
     StructureConstant -> Eps, 
     Representations   -> {LTa,LSU2D}, 
-    Definitions       -> {LTa[a_,b_,c_]->PauliSigma[a,b,c]/2, FSU2L[i_,j_,k_]:> I Eps[i,j,k]}  },
+    Definitions       -> {LTa[a_,b_,c_]->PauliSigma[a,b,c]/2, FSU2L[i_,j_,k_]:> I Eps[i,j,k]} },
   SU2R == {
     Abelian           -> False, 
     CouplingConstant  -> gR, 
     GaugeBoson        -> Wpi, 
     StructureConstant -> Eps, 
     Representations   -> {RTa,RSU2D}, 
-    Definitions       -> {RTa[a_,b_,c_]->PauliSigma[a,b,c]/2, FSU2R[i_,j_,k_]:> I Eps[i,j,k]}  },
+    Definitions       -> {RTa[a_,b_,c_]->PauliSigma[a,b,c]/2, FSU2R[i_,j_,k_]:> I Eps[i,j,k]} },
   SU3C == {
     Abelian           -> False, 
     CouplingConstant  -> gs, 
@@ -120,7 +120,7 @@ M$ClassesDescription = {
     PropagatorLabel -> "A", 
     PropagatorType  -> W, 
     PropagatorArrow -> None,
-    FullName        -> "Photon"  },
+    FullName        -> "Photon" },
   V[2] == {
     ClassName       -> Z, 
     SelfConjugate   -> True,
@@ -131,7 +131,7 @@ M$ClassesDescription = {
     PropagatorLabel -> "Z",
     PropagatorType  -> Sine,
     PropagatorArrow -> None,
-    FullName        -> "Z"  },
+    FullName        -> "Z" },
   V[3] == {
     ClassName        -> W,
     SelfConjugate    -> False,
@@ -144,7 +144,7 @@ M$ClassesDescription = {
     PropagatorLabel  -> "W",
     PropagatorType   -> Sine,
     PropagatorArrow  -> Forward,
-    FullName         -> "W"  },
+    FullName         -> "W" },
   V[4] == {
     ClassName        -> G,
     SelfConjugate    -> True,
@@ -156,7 +156,7 @@ M$ClassesDescription = {
     PropagatorLabel  -> "G",
     PropagatorType   -> C,
     PropagatorArrow  -> None,
-    FullName         -> "G"  },
+    FullName         -> "G" },
   V[5] == {
     ClassName       -> Zp, 
     SelfConjugate   -> True,
@@ -168,7 +168,7 @@ M$ClassesDescription = {
     PropagatorType  -> Sine,
     PropagatorArrow -> None,
     FullName        -> "Zp"
-  },
+ },
   V[6] == {
     ClassName        -> Wp,
     SelfConjugate    -> False,
@@ -181,7 +181,7 @@ M$ClassesDescription = {
     PropagatorLabel  -> "Wp",
     PropagatorType   -> Sine,
     PropagatorArrow  -> Forward,
-    FullName         -> "Wp"  },
+    FullName         -> "Wp" },
 
  (* Ghosts: related to physical gauge bosons *) 
   U[1] == {
@@ -193,7 +193,7 @@ M$ClassesDescription = {
     Width	    -> 0,
     PropagatorLabel -> "uA",
     PropagatorType  -> GhostDash,
-    PropagatorArrow -> Forward  },
+    PropagatorArrow -> Forward },
   U[2] == {
     ClassName       -> ghZ,
     SelfConjugate   -> False,
@@ -203,7 +203,7 @@ M$ClassesDescription = {
     Width           -> {WZ,2.52},
     PropagatorLabel -> "uZ",
     PropagatorType  -> GhostDash,
-    PropagatorArrow -> Forward  },
+    PropagatorArrow -> Forward },
   U[31] == {
     ClassName       -> ghWp,
     SelfConjugate   -> False, 
@@ -213,7 +213,7 @@ M$ClassesDescription = {
     Width           -> {WW,2.11},
     PropagatorLabel -> "uWp",
     PropagatorType  -> GhostDash, 
-    PropagatorArrow -> Forward  },
+    PropagatorArrow -> Forward },
   U[32] == {
     ClassName       -> ghWm,
     SelfConjugate   -> False, 
@@ -223,7 +223,7 @@ M$ClassesDescription = {
     Width           -> {WW,2.11},
     PropagatorLabel -> "uWm",
     PropagatorType  -> GhostDash, 
-    PropagatorArrow -> Forward  },
+    PropagatorArrow -> Forward },
   U[4] == {
     ClassName       -> ghG, 
     SelfConjugate   -> False,
@@ -234,7 +234,7 @@ M$ClassesDescription = {
     Width	    -> 0,
     PropagatorLabel -> "uG",
     PropagatorType  -> GhostDash,
-    PropagatorArrow -> Forward  },
+    PropagatorArrow -> Forward },
   U[5] == {
     ClassName       -> ghZp,
     SelfConjugate   -> False,
@@ -244,7 +244,7 @@ M$ClassesDescription = {
     Width           -> {WZp,13.2},
     PropagatorLabel -> "uZp",
     PropagatorType  -> GhostDash,
-    PropagatorArrow -> Forward  },
+    PropagatorArrow -> Forward },
   U[61] == {
     ClassName       -> ghWpp,
     SelfConjugate   -> False, 
@@ -254,7 +254,7 @@ M$ClassesDescription = {
     Width           -> {WWp,3.04},
     PropagatorLabel -> "uWpp",
     PropagatorType  -> GhostDash, 
-    PropagatorArrow -> Forward  },
+    PropagatorArrow -> Forward },
   U[62] == {
     ClassName       -> ghWpm,
     SelfConjugate   -> False, 
@@ -264,7 +264,7 @@ M$ClassesDescription = {
     Width           -> {WWp,3.04},
     PropagatorLabel -> "uWpm",
     PropagatorType  -> GhostDash, 
-    PropagatorArrow -> Forward  },
+    PropagatorArrow -> Forward },
 
  (* Gauge bosons: unphysical vector fields *) 
   V[11] == {
@@ -302,7 +302,7 @@ M$ClassesDescription = {
     Ghost         -> Wi,
     Indices       -> {Index[SU2L]},
     FlavorIndex   -> SU2L,
-    Definitions   -> {ghWi[1] -> (ghWp+ghWm)/Sqrt[2], ghWi[2] -> (ghWm-ghWp)/(I*Sqrt[2]), ghWi[3] -> TAZZp[1,1] (-sth ghZ + cth ghZp) + TAZZp[1,2] ghA }  },
+    Definitions   -> {ghWi[1] -> (ghWp+ghWm)/Sqrt[2], ghWi[2] -> (ghWm-ghWp)/(I*Sqrt[2]), ghWi[3] -> TAZZp[1,1] (-sth ghZ + cth ghZp) + TAZZp[1,2] ghA } },
   U[13] == {
     ClassName     -> ghWpi,
     Unphysical    -> True,
@@ -328,7 +328,7 @@ M$ClassesDescription = {
     PDG              -> {12,14,16},
     ParticleName     -> {"ve","vm","vt"},
     AntiParticleName -> {"ve~","vm~","vt~"},
-    FullName         -> {"Electron-neutrino", "Mu-neutrino", "Tau-neutrino"}  },
+    FullName         -> {"Electron-neutrino", "Mu-neutrino", "Tau-neutrino"} },
   F[2] == {
     ClassName        -> l,
     ClassMembers     -> {e,mu,ta},
@@ -344,7 +344,7 @@ M$ClassesDescription = {
     PDG              -> {11,13,15},
     ParticleName     -> {"e-", "mu-", "ta-"},
     AntiParticleName -> {"e+", "mu+", "ta+"},
-    FullName         -> {"Electron", "Muon", "Tau"}   },
+    FullName         -> {"Electron", "Muon", "Tau"} },
   F[3] == {
     ClassName        -> uq,
     ClassMembers     -> {u,c,t},
@@ -360,7 +360,7 @@ M$ClassesDescription = {
     PDG              -> {2,4,6}, 
     ParticleName     -> {"u",  "c",  "t" },
     AntiParticleName -> {"u~", "c~", "t~"},
-    FullName         -> {"u-quark", "c-quark", "t-quark"}  },
+    FullName         -> {"u-quark", "c-quark", "t-quark"} },
   F[4] == {
     ClassName        -> dq,
     ClassMembers     -> {d, s, b},
@@ -376,7 +376,7 @@ M$ClassesDescription = {
     PDG              -> {1,3,5},
     ParticleName     -> {"d",  "s",  "b" },
     AntiParticleName -> {"d~", "s~", "b~"},
-    FullName         -> {"d-quark", "s-quark", "b-quark"}  },
+    FullName         -> {"d-quark", "s-quark", "b-quark"} },
   F[5] == {
     ClassName        -> n,
     ClassMembers     -> {ne,nm,nt},
@@ -392,7 +392,7 @@ M$ClassesDescription = {
     PDG              -> {103,104,105},
     ParticleName     -> {"ne","nm","nt"},
     AntiParticleName -> {"ne~","nm~","nt~"},
-    FullName         -> {"Electron-scotino", "Mu-scotino", "Tau-scotino"}  },
+    FullName         -> {"Electron-scotino", "Mu-scotino", "Tau-scotino"} },
   F[6] == {
     ClassName        -> ddq,
     ClassMembers     -> {dd, ds, db},
@@ -408,7 +408,7 @@ M$ClassesDescription = {
     PDG              -> {106,107,108},
     ParticleName     -> {"dd",  "ds",  "db" },
     AntiParticleName -> {"dd~", "ds~", "db~"},
-    FullName         -> {"dd-exquark", "ds-exquark", "db-exquark"}  },
+    FullName         -> {"dd-exquark", "ds-exquark", "db-exquark"} },
  (* Fermions: unphysical fields *) 
   F[11] == {
     ClassName      -> LL, 
@@ -418,7 +418,7 @@ M$ClassesDescription = {
     SelfConjugate  -> False,
     QuantumNumbers -> {BL -> -1/2},
     Definitions    -> { LL[sp1_,1,ff_] :> Module[{sp2,ff2}, MNSL[ff, ff2] ProjM[sp1,sp2] v[sp2,ff2]], 
-                        LL[sp1_,2,ff_] :> Module[{sp2}, ProjM[sp1,sp2] l[sp2,ff]] }  },
+                        LL[sp1_,2,ff_] :> Module[{sp2}, ProjM[sp1,sp2] l[sp2,ff]] } },
   F[12] == {
     ClassName      -> LR, 
     Unphysical     -> True, 
@@ -427,7 +427,7 @@ M$ClassesDescription = {
     SelfConjugate  -> False,
     QuantumNumbers -> {BL -> -1/2},
     Definitions    -> { LR[sp1_,1,ff_] :> Module[{sp2,ff2}, MNSR[ff, ff2] ProjP[sp1,sp2] n[sp2,ff2]], 
-                        LR[sp1_,2,ff_] :> Module[{sp2}, ProjP[sp1,sp2] l[sp2,ff]] }  },
+                        LR[sp1_,2,ff_] :> Module[{sp2}, ProjP[sp1,sp2] l[sp2,ff]] } },
   F[13] == {
     ClassName      -> nuR, 
     Unphysical     -> True, 
@@ -435,7 +435,7 @@ M$ClassesDescription = {
     FlavorIndex    -> Generation,
     SelfConjugate  -> False,
     QuantumNumbers -> {BL -> 0},
-    Definitions    -> { nuR[sp1_,ff_] :> Module[{sp2}, ProjP[sp1,sp2] v[sp2,ff]] }  },
+    Definitions    -> { nuR[sp1_,ff_] :> Module[{sp2}, ProjP[sp1,sp2] v[sp2,ff]] } },
   F[14] == {
     ClassName      -> nL, 
     Unphysical     -> True, 
@@ -443,7 +443,7 @@ M$ClassesDescription = {
     FlavorIndex    -> Generation,
     SelfConjugate  -> False,
     QuantumNumbers -> {BL -> 0},
-    Definitions    -> { nL[sp1_,ff_] :> Module[{sp2}, ProjM[sp1,sp2] n[sp2,ff]] }  },
+    Definitions    -> { nL[sp1_,ff_] :> Module[{sp2}, ProjM[sp1,sp2] n[sp2,ff]] } },
   F[15] == {
     ClassName      -> QL, 
     Unphysical     -> True, 
@@ -452,7 +452,7 @@ M$ClassesDescription = {
     SelfConjugate  -> False,
     QuantumNumbers -> {BL -> 1/6},
     Definitions    -> { QL[sp1_,1,ff_,cc_] :> Module[{sp2}, ProjM[sp1,sp2] uq[sp2,ff,cc]], 
-			 QL[sp1_,2,ff_,cc_] :> Module[{sp2,ff2}, CKML[ff,ff2] ProjM[sp1,sp2] dq[sp2,ff2,cc]] }  },
+			 QL[sp1_,2,ff_,cc_] :> Module[{sp2,ff2}, CKML[ff,ff2] ProjM[sp1,sp2] dq[sp2,ff2,cc]] } },
   F[16] == {
     ClassName      -> QR, 
     Unphysical     -> True, 
@@ -461,7 +461,7 @@ M$ClassesDescription = {
     SelfConjugate  -> False,
     QuantumNumbers -> {BL -> 1/6},
     Definitions    -> { QR[sp1_,1,ff_,cc_] :> Module[{sp2}, ProjP[sp1,sp2] uq[sp2,ff,cc]], 
-			 QR[sp1_,2,ff_,cc_] :> Module[{sp2,ff2}, CKMR[ff,ff2] ProjP[sp1,sp2] ddq[sp2,ff2,cc]] }  },
+			 QR[sp1_,2,ff_,cc_] :> Module[{sp2,ff2}, CKMR[ff,ff2] ProjP[sp1,sp2] ddq[sp2,ff2,cc]] } },
   F[17] == {
     ClassName      -> dR, 
     Unphysical     -> True, 
@@ -469,7 +469,7 @@ M$ClassesDescription = {
     FlavorIndex    -> Generation,
     SelfConjugate  -> False,
     QuantumNumbers -> {BL -> -1/3},
-    Definitions    -> { dR[sp1_,ff_,cc_] :> Module[{sp2}, ProjP[sp1,sp2] dq[sp2,ff,cc]] }  },
+    Definitions    -> { dR[sp1_,ff_,cc_] :> Module[{sp2}, ProjP[sp1,sp2] dq[sp2,ff,cc]] } },
   F[18] == {
     ClassName      -> ddL, 
     Unphysical     -> True, 
@@ -477,7 +477,7 @@ M$ClassesDescription = {
     FlavorIndex    -> Generation,
     SelfConjugate  -> False,
     QuantumNumbers -> {BL -> -1/3},
-    Definitions    -> { ddL[sp1_,ff_,cc_] :> Module[{sp2}, ProjM[sp1,sp2] ddq[sp2,ff,cc]] }  },
+    Definitions    -> { ddL[sp1_,ff_,cc_] :> Module[{sp2}, ProjM[sp1,sp2] ddq[sp2,ff,cc]] } },
 
  (* Higgs: physical scalars  *) 
   S[1] == {
@@ -490,7 +490,7 @@ M$ClassesDescription = {
     PropagatorArrow -> None,
     PDG             -> 25,
     ParticleName    -> "H0",
-    FullName        -> "H0"  },
+    FullName        -> "H0" },
   S[2] == {
     ClassName       -> H1,
     SelfConjugate   -> True,
@@ -501,7 +501,7 @@ M$ClassesDescription = {
     PropagatorArrow -> None,
     PDG             -> 26,
     ParticleName    -> "H1",
-    FullName        -> "H1"  },
+    FullName        -> "H1" },
   S[3] == {
     ClassName       -> H2,
     SelfConjugate   -> True,
@@ -512,7 +512,7 @@ M$ClassesDescription = {
     PropagatorArrow -> None,
     PDG             -> 27,
     ParticleName    -> "H2",
-    FullName        -> "H2"  },
+    FullName        -> "H2" },
   S[4] == {
     ClassName       -> H3,
     SelfConjugate   -> True,
@@ -523,7 +523,7 @@ M$ClassesDescription = {
     PropagatorArrow -> None,
     PDG             -> 28,
     ParticleName    -> "H3",
-    FullName        -> "H3"  },
+    FullName        -> "H3" },
   S[5] == {
     ClassName       -> A1,
     SelfConjugate   -> True,
@@ -534,7 +534,7 @@ M$ClassesDescription = {
     PropagatorArrow -> None,
     PDG             -> 29,
     ParticleName    -> "A1",
-    FullName        -> "A1"  },
+    FullName        -> "A1" },
   S[6] == {
     ClassName       -> A2,
     SelfConjugate   -> True,
@@ -545,7 +545,7 @@ M$ClassesDescription = {
     PropagatorArrow -> None,
     PDG             -> 30,
     ParticleName    -> "A2",
-    FullName        -> "A2"  },
+    FullName        -> "A2" },
   S[7] == {
     ClassName        -> HP1,
     SelfConjugate    -> False,
@@ -558,7 +558,7 @@ M$ClassesDescription = {
     PDG              -> 31,
     ParticleName     -> "H1+",
     AntiParticleName -> "H1-",
-    FullName         -> "HP1"  },
+    FullName         -> "HP1" },
   S[8] == {
     ClassName        -> HM2,
     SelfConjugate    -> False,
@@ -571,7 +571,7 @@ M$ClassesDescription = {
     PDG              -> 32,
     ParticleName     -> "H2-",
     AntiParticleName -> "H2+",
-    FullName         -> "HM2"  },
+    FullName         -> "HM2" },
  (* Higgs: Goldstone  *) 
   S[9] == {
     ClassName       -> G10,
@@ -584,7 +584,7 @@ M$ClassesDescription = {
     PropagatorArrow -> None,
     PDG             -> 33,
     ParticleName    -> "G10",
-    FullName        -> "G10"  },
+    FullName        -> "G10" },
   S[10] == {
     ClassName       -> G20,
     SelfConjugate   -> True,
@@ -596,7 +596,7 @@ M$ClassesDescription = {
     PropagatorArrow -> None,
     PDG             -> 34,
     ParticleName    -> "G20",
-    FullName        -> "G20"  },
+    FullName        -> "G20" },
   S[11] == {
     ClassName        -> GP1,
     SelfConjugate    -> False,
@@ -610,7 +610,7 @@ M$ClassesDescription = {
     PDG              -> 35,
     ParticleName     -> "G1+",
     AntiParticleName -> "G1-",
-    FullName         -> "GP1"  },
+    FullName         -> "GP1" },
   S[12] == {
     ClassName        -> GM2,
     SelfConjugate    -> False,
@@ -624,7 +624,7 @@ M$ClassesDescription = {
     PDG              -> 36,
     ParticleName     -> "G2-",
     AntiParticleName -> "G2+",
-    FullName         -> "GM2"  },
+    FullName         -> "GM2" },
 
  (* Higgs: unphysical scalars  *) 
   S[131] == {
@@ -634,7 +634,7 @@ M$ClassesDescription = {
     SelfConjugate  -> False,
     QuantumNumbers -> {BL -> 0},
     Definitions    -> { Phi[1,1] -> (H1 +I A1)/Sqrt[2], Phi[1,2] -> (cb HP1 +sb GP1), Phi[2,1] -> cz HM2 + sz GM2, 
-			 Phi[2,2] -> (k+THP0 H0+THP2 H2+THP3 H3+I((1/Sqrt[1+tb^2+tz^2])A2-(tz/Sqrt[1+tz^2])G10+(tb/Sqrt[(1+tz^2)(1+tb^2+tz^2)])G20))/Sqrt[2] }  },
+			 Phi[2,2] -> (k+THP0 H0+THP2 H2+THP3 H3+I((1/Sqrt[1+tb^2+tz^2])A2-(tz/Sqrt[1+tz^2])G10+(tb/Sqrt[(1+tz^2)(1+tb^2+tz^2)])G20))/Sqrt[2] } },
   S[141] == {
     ClassName      -> ChiL, 
     Unphysical     -> True, 
@@ -642,7 +642,7 @@ M$ClassesDescription = {
     SelfConjugate  -> False,
     QuantumNumbers -> {BL -> 1/2},
     Definitions    -> { ChiL[1] -> (-sb HP1 + cb GP1) , 
-			 ChiL[2] -> (vL+THL0 H0+THL2 H2+THL3 H3 + I ((-tb/Sqrt[1+tb^2+tz^2]) A2 +(Sqrt[(1+tz^2)/(1+tb^2+tz^2)]) G20))/Sqrt[2]}  },
+			 ChiL[2] -> (vL+THL0 H0+THL2 H2+THL3 H3 + I ((-tb/Sqrt[1+tb^2+tz^2]) A2 +(Sqrt[(1+tz^2)/(1+tb^2+tz^2)]) G20))/Sqrt[2]} },
   S[151] == {
     ClassName      -> ChiR, 
     Unphysical     -> True, 
@@ -709,9 +709,7 @@ LFermions := Block[{mu},
 LHiggskin := Block[{ii,jj,kk,ll,aa,bb,mu, feynmangaugerules},
   feynmangaugerules=If[Not[FeynmanGauge],{G10|G20|GP1|GM2|GP1bar|GM2bar->0},{}];
   ExpandIndices[
-Sum[(del[Phibar[ii,jj],mu]+(I/2)(gL Wi[mu,bb] HC[PauliSigma[bb,ii,ll]] Phibar[ll,jj]- gR Phibar[ii,ll] Wpi[mu,bb] HC[PauliSigma[bb,ll,jj]]))
-    (del[Phi[ii,jj], mu]-(I/2) (gL Wi[mu,aa] PauliSigma[aa,ii,kk] Phi[kk,jj]- gR Phi[ii,kk] Wpi[mu,aa] PauliSigma[aa,kk,jj])),{ii,2},{jj,2}]
-   +DC[ChiLbar[ii],mu] DC[ChiL[ii],mu] + DC[ChiRbar[jj],mu] DC[ChiR[jj],mu],FlavorExpand->{LSU2D,RSU2D,SU2L,SU2R}]/.feynmangaugerules]; 
+Sum[(del[Phibar[ii,jj],mu]+(I/2)(gL Wi[mu,bb] HC[PauliSigma[bb,ii,ll]] Phibar[ll,jj] - gR Phibar[ii,ll] Wpi[mu,bb] HC[PauliSigma[bb,ll,jj]])) (del[Phi[ii,jj], mu]-(I/2) (gL Wi[mu,aa] PauliSigma[aa,ii,kk] Phi[kk,jj] - gR Phi[ii,kk] Wpi[mu,aa] PauliSigma[aa,kk,jj])),{ii,2},{jj,2}] +DC[ChiLbar[ii],mu] DC[ChiL[ii],mu] + DC[ChiRbar[jj],mu] DC[ChiR[jj],mu],FlavorExpand->{LSU2D,RSU2D,SU2L,SU2R}]/.feynmangaugerules]; 
 
 (* Higgs Potential *)
 
@@ -798,7 +796,7 @@ M$Parameters = {
     Value            -> 132.50698,
     InteractionOrder -> {QED,-2},
     TeX              -> Superscript[Subscript[\[Alpha],EW],-1],
-    Description      -> "Inverse of the EW coupling constant at the Z pole"  },
+    Description      -> "Inverse of the EW coupling constant at the Z pole" },
   Gf == {
     ParameterType    -> External,
     BlockName        -> SMINPUTS,
@@ -806,7 +804,7 @@ M$Parameters = {
     Value            -> 1.16637*^-5,
     InteractionOrder -> {QED,2},
     TeX              -> Subscript[G,F],
-    Description      -> "Fermi constant"  },
+    Description      -> "Fermi constant" },
   aS == {
     ParameterType    -> External,
     BlockName        -> SMINPUTS,
@@ -814,7 +812,7 @@ M$Parameters = {
     Value            -> 0.1184,
     InteractionOrder -> {QCD,2},
     TeX              -> Subscript[\[Alpha],s],
-    Description      -> "Strong coupling constant at the Z pole"  },
+    Description      -> "Strong coupling constant at the Z pole" },
   sw2 == {
     ParameterType    -> External,
     BlockName        -> SMINPUTS,
@@ -822,7 +820,7 @@ M$Parameters = {
     Value            -> 0.22343,
     InteractionOrder -> {QED,0},
     TeX              -> Superscript[Subscript[s,w],2],
-    Description      -> "Squared Sine of the Weinberg angle"  },
+    Description      -> "Squared Sine of the Weinberg angle" },
   lm2 == {
     ParameterType    -> External,
     BlockName        -> ALRMINPUTS,
@@ -830,7 +828,7 @@ M$Parameters = {
     Value            -> 0.05,
     InteractionOrder -> {QED,2},
     TeX              -> Subscript[\[Lambda],2],
-    Description      -> "Higgs quartic coupling"  },
+    Description      -> "Higgs quartic coupling" },
   lm3 == {
     ParameterType    -> External,
     BlockName        -> ALRMINPUTS,
@@ -838,7 +836,7 @@ M$Parameters = {
     Value            -> 0.006,
     InteractionOrder -> {QED,2},
     TeX              -> Subscript[\[Lambda],3],
-    Description      -> "Higgs quartic coupling"  },
+    Description      -> "Higgs quartic coupling" },
   al1 == {
     ParameterType    -> External,
     BlockName        -> ALRMINPUTS,
@@ -846,7 +844,7 @@ M$Parameters = {
     Value            -> 0.003,
     InteractionOrder -> {QED,2},
     TeX              -> Subscript[\[Alpha],1],
-    Description      -> "Higgs quartic coupling"  },
+    Description      -> "Higgs quartic coupling" },
   al2 == {
     ParameterType    -> External,
     BlockName        -> ALRMINPUTS,
@@ -854,7 +852,7 @@ M$Parameters = {
     Value            -> -0.01,
     InteractionOrder -> {QED,2},
     TeX              -> Subscript[\[Alpha],2],
-    Description      -> "Higgs quartic coupling"  },
+    Description      -> "Higgs quartic coupling" },
   al3 == {
     ParameterType    -> External,
     BlockName        -> ALRMINPUTS,
@@ -862,7 +860,7 @@ M$Parameters = {
     Value            -> 0.005,
     InteractionOrder -> {QED,2},
     TeX              -> Subscript[\[Alpha],3],
-    Description      -> "Higgs quartic coupling"  },
+    Description      -> "Higgs quartic coupling" },
   tb == {
     ParameterType    -> External,
     BlockName        -> ALRMINPUTS,
@@ -870,7 +868,7 @@ M$Parameters = {
     Value            -> 10.,
     InteractionOrder -> {QED,0},
     TeX              -> Subscript[t,\[Beta]],
-    Description      -> "vevs ratio: Tan beta"  },
+    Description      -> "vevs ratio: Tan beta" },
   mu3 == {
     ParameterType    -> External,
     BlockName        -> ALRMINPUTS,
@@ -878,7 +876,7 @@ M$Parameters = {
     Value            -> -0.2,
     InteractionOrder -> {QED,1},
     TeX              -> Subscript[\[Mu],3],
-    Description      -> "Higgs trilinear coupling"  },
+    Description      -> "Higgs trilinear coupling" },
   gR == {
     ParameterType    -> External,
     BlockName        -> ALRMINPUTS,
@@ -886,133 +884,133 @@ M$Parameters = {
     Value            -> 0.8,
     InteractionOrder -> {QED,1},
     TeX              -> Subscript[g,R],
-    Description      -> "Right Weak coupling constant at the Z pole"  },
+    Description      -> "Right Weak coupling constant at the Z pole" },
   ymdo == {
     ParameterType -> External,
     BlockName     -> YUKAWA,
     OrderBlock    -> 1,
     Value         -> 5.04*^-3,
     TeX           -> Subscript[m,d],
-    Description   -> "Down Yukawa mass"  },
+    Description   -> "Down Yukawa mass" },
   ymup == {
     ParameterType -> External,
     BlockName     -> YUKAWA,
     OrderBlock    -> 2,
     Value         -> 2.55*^-3,
     TeX           -> Subscript[m,u],
-    Description   -> "Up Yukawa mass"  },
+    Description   -> "Up Yukawa mass" },
   yms == {
     ParameterType -> External,
     BlockName     -> YUKAWA,
     OrderBlock    -> 3,
     Value         -> 0.101,
     TeX           -> Subscript[m,s],
-    Description   -> "Strange Yukawa mass"  },
+    Description   -> "Strange Yukawa mass" },
   ymc == {
     ParameterType -> External,
     BlockName     -> YUKAWA,
     OrderBlock    -> 4,
     Value         -> 1.27,
     TeX           -> Subscript[m,c],
-    Description   -> "Charm Yukawa mass"  },
+    Description   -> "Charm Yukawa mass" },
   ymb == {
     ParameterType -> External,
     BlockName     -> YUKAWA,
     OrderBlock    -> 5,
     Value         -> 4.7,
     TeX           -> Subscript[m,b],
-    Description   -> "Bottom Yukawa mass"  },
+    Description   -> "Bottom Yukawa mass" },
   ymt == {
     ParameterType -> External,
     BlockName     -> YUKAWA,
     OrderBlock    -> 6,
     Value         -> 172,
     TeX           -> Subscript[m,t],
-    Description   -> "Top Yukawa mass"  },
+    Description   -> "Top Yukawa mass" },
   ymddo == {
     ParameterType -> External,
     BlockName     -> YUKAWA,
     OrderBlock    -> 7,
     Value         -> 3*^2,
     TeX           -> Subscript[m,d'],
-    Description   -> "Exotic-Down Yukawa mass"  },
+    Description   -> "Exotic-Down Yukawa mass" },
   ymds == {
     ParameterType -> External,
     BlockName     -> YUKAWA,
     OrderBlock    -> 8,
     Value         -> 6*^2,
     TeX           -> Subscript[m,s'],
-    Description   -> "Exotic-Strange Yukawa mass"  },
+    Description   -> "Exotic-Strange Yukawa mass" },
   ymdb == {
     ParameterType -> External,
     BlockName     -> YUKAWA,
     OrderBlock    -> 9,
     Value         -> 1*^3,
     TeX           -> Subscript[m,b'],
-    Description   -> "Exotic-Bottom Yukawa mass"  },
+    Description   -> "Exotic-Bottom Yukawa mass" },
   yme == {
     ParameterType -> External,
     BlockName     -> YUKAWA,
     OrderBlock    -> 11,
     Value         -> 5.11*^-4,
     TeX           -> Subscript[m,e],
-    Description   -> "Electron Yukawa mass"  },
+    Description   -> "Electron Yukawa mass" },
   ymnue == {
     ParameterType -> External,
     BlockName     -> YUKAWA,
     OrderBlock    -> 12,
     Value         -> 1.*^-12,
     TeX           -> Subscript[m,Subscript[\[Nu],e]],
-    Description   -> "Electron-Neutrino Yukawa mass"  },
+    Description   -> "Electron-Neutrino Yukawa mass" },
   ymm == {
     ParameterType -> External,
     BlockName     -> YUKAWA,
     OrderBlock    -> 13,
     Value         -> 0.10566,
     TeX           -> Subscript[m,\[Mu]],
-    Description   -> "Muon Yukawa mass"  },
+    Description   -> "Muon Yukawa mass" },
   ymnum == {
     ParameterType -> External,
     BlockName     -> YUKAWA,
     OrderBlock    -> 14,
     Value         -> 0.0089*^-9,
     TeX           -> Subscript[m,Subscript[\[Nu],\[Mu]]],
-    Description   -> "Muon-Neutrino Yukawa mass"  },
+    Description   -> "Muon-Neutrino Yukawa mass" },
   ymtau == {
     ParameterType -> External,
     BlockName     -> YUKAWA,
     OrderBlock    -> 15,
     Value         -> 1.777,
     TeX           -> Subscript[m,\[Tau]],
-    Description   -> "Tau Yukawa mass"  },
+    Description   -> "Tau Yukawa mass" },
   ymnutau == {
     ParameterType -> External,
     BlockName     -> YUKAWA,
     OrderBlock    -> 16,
     Value         -> 0.0504*^-9,
     TeX           -> Subscript[m,Subscript[\[Nu],\[Tau]]],
-    Description   -> "Tau-Neutrino Yukawa mass"  },
+    Description   -> "Tau-Neutrino Yukawa mass" },
   ymne == {
     ParameterType -> External,
     BlockName     -> YUKAWA,
     OrderBlock    -> 17,
     Value         -> 300,
     TeX           -> Subscript[m,Subscript[n,e]],
-    Description   -> "Electron-Scotino Yukawa mass"  },
+    Description   -> "Electron-Scotino Yukawa mass" },
   ymnm == {
     ParameterType -> External,
     BlockName     -> YUKAWA,
     OrderBlock    -> 18,
     Value         -> 500,
     TeX           -> Subscript[m,Subscript[n,\[Mu]]],
-    Description   -> "Muon-Scotino Yukawa mass"  },
+    Description   -> "Muon-Scotino Yukawa mass" },
   ymntau == {
     ParameterType -> External,
     BlockName     -> YUKAWA,
     OrderBlock    -> 19,
     Value         -> 700,
     TeX           -> Subscript[m,Subscript[n,\[Tau]]],
-    Description   -> "Tau-Scotino Yukawa mass"  },
+    Description   -> "Tau-Scotino Yukawa mass" },
   sL12 == {
     ParameterType -> External,
     BlockName     -> CKMBLOCK,
@@ -1144,152 +1142,152 @@ M$Parameters = {
     Value            -> 1/aEWM1,
     InteractionOrder -> {QED,2},
     TeX              -> Subscript[\[Alpha],EW],
-    Description      -> "Electroweak coupling constant"  },
+    Description      -> "Electroweak coupling constant" },
   ee == {
     ParameterType    -> Internal,
     Value            -> Sqrt[4 Pi aEW],
     InteractionOrder -> {QED,1},
     TeX              -> e,
-    Description      -> "Electric coupling constant"  },
+    Description      -> "Electric coupling constant" },
   sw == {
     ParameterType    -> Internal,
     Value            -> Sqrt[sw2],
     InteractionOrder -> {QED,0},
     TeX              -> Subscript[s,w],
-    Description      -> "Sine of the Weinberg angle"  },
+    Description      -> "Sine of the Weinberg angle" },
   cw == {
     ParameterType    -> Internal,
     Value            -> Sqrt[1-sw2],
     InteractionOrder -> {QED,0},
     TeX              -> Subscript[c,w],
-    Description      -> "Cosine of the Weinberg angle"  },
+    Description      -> "Cosine of the Weinberg angle" },
   gL == {
     ParameterType    -> Internal,
     Definitions      -> {gL->ee/sw},
     InteractionOrder -> {QED,1},
     TeX              -> Subscript[g,L],
-    Description      -> "Weak coupling constant at the Z pole"  },
+    Description      -> "Weak coupling constant at the Z pole" },
   gBL == {
     ParameterType    -> Internal,
     Definitions      -> {gBL->gL*gR*sw/Sqrt[cw^2*gR^2-sw^2*gL^2]},
     InteractionOrder -> {QED,1},
     TeX              -> Subscript[g,BL],
-    Description      -> "B-L coupling constant at the Z pole"  },
+    Description      -> "B-L coupling constant at the Z pole" },
   gY == {
     ParameterType    -> Internal,
     Definitions      -> {gY->gR*gBL/Sqrt[gR^2+gBL^2]},
     InteractionOrder -> {QED,1},
     TeX              -> Subscript[g,Y],
-    Description      -> "Hypercharge coupling constant at the Z pole"  },
+    Description      -> "Hypercharge coupling constant at the Z pole" },
   gs == {
     ParameterType    -> Internal,
     Value            -> Sqrt[4Pi aS],
     InteractionOrder -> {QCD,1},
     TeX              -> Subscript[g,s],
     ParameterName    -> G,
-    Description      -> "Strong coupling constant at the Z pole"  },
+    Description      -> "Strong coupling constant at the Z pole" },
   vev == {
     ParameterType    -> Internal,
     Value            -> 2*MW*sw/ee,
     InteractionOrder -> {QED,-1},
     TeX              -> v,
-    Description      -> "EW SSB scale (v)"  },
+    Description      -> "EW SSB scale (v)" },
   vp == {
     ParameterType    -> Internal,
-    Value            -> Sqrt[(16 MZ^2 (MW^2 - MZ^2) (1 + tb^2)^2 + 4 gR^2 MZ^2 (1 + tb^2) (MZ^2 (-1 + sw^2) (1 + tb^2) + MW^2 (1 + (1 - 2 sw^2) tb^2)) vev^2 + gR^4 MW^2 tb^4 vev^4)/(gR^4 (MW^2 + MZ^2 (-1 + sw^2)) (1 + tb^2)^2 vev^2)],
+    Value            -> Sqrt[(16 MZ^2 (MW^2-MZ^2) (1+tb^2)^2 + 4 gR^2 MZ^2 (1+tb^2) (MZ^2 (-1+sw^2) (1+tb^2) + MW^2 (1+(1-2 sw^2) tb^2)) vev^2 + gR^4 MW^2 tb^4 vev^4)/(gR^4 (MW^2+MZ^2 (-1+sw^2)) (1+tb^2)^2 vev^2)],
     InteractionOrder -> {QED,-1},
     TeX              -> v',
-    Description      -> "Weak Right and BL SSB scale (v')"  },
+    Description      -> "Weak Right and BL SSB scale (v')" },
   MWp == {
     ParameterType    -> Internal,
     Value            -> gR*vp/2,
     InteractionOrder -> {QED,0},
     TeX              -> Subscript[M,W'],
-    Description      -> "W' mass"  },
+    Description      -> "W' mass" },
   sb == {
     ParameterType    -> Internal,
     Value            -> tb/Sqrt[1+tb^2],
     InteractionOrder -> {QED,0},
     TeX              -> Subscript[s,\[Beta]],
-    Description      -> "Sine beta"  },
+    Description      -> "Sine beta" },
   cb == {
     ParameterType    -> Internal,
     Value            -> 1/Sqrt[1+tb^2],
     InteractionOrder -> {QED,0},
     TeX              -> Subscript[c,\[Beta]],
-    Description      -> "Cosine beta"  },
+    Description      -> "Cosine beta" },
   k == {
     ParameterType    -> Internal,
     Value            -> vev*sb,
     InteractionOrder -> {QED,-1},
-    Description      -> "Higgs vacuum expectation value"  },
+    Description      -> "Higgs vacuum expectation value" },
   vL == {
     ParameterType    -> Internal,
     Value            -> vev*cb,
     InteractionOrder -> {QED,-1},
     TeX              -> Subscript[v,L],
-    Description      -> "Higgs vacuum expectation value"  },
+    Description      -> "Higgs vacuum expectation value" },
   vR == {
     ParameterType    -> Internal,
     Value            -> Sqrt[vp^2-k^2],
     InteractionOrder -> {QED,-1},
     TeX              -> Subscript[v,R],
-    Description      -> "Higgs vacuum expectation value"  },
+    Description      -> "Higgs vacuum expectation value" },
   lm4 == {
     ParameterType    -> Internal,
     Value            -> lm3-(k mu3)/(Sqrt[2]vL vR),
     InteractionOrder -> {QED,2},
     TeX              -> Subscript[\[Lambda],4],
-    Description      -> "Higgs quartic coupling"  },
+    Description      -> "Higgs quartic coupling" },
   tz == {
     ParameterType    -> Internal,
     Value            -> k/vR,
     InteractionOrder -> {QED,0},
     TeX              -> Subscript[t,\[Zeta]],
-    Description      -> "vevs ratio: Tan zeta"  },
+    Description      -> "vevs ratio: Tan zeta" },
   sz == {
     ParameterType    -> Internal,
     Value            -> tz/Sqrt[1+tz^2],
     InteractionOrder -> {QED,0},
     TeX              -> Subscript[s,\[Zeta]],
-    Description      -> "Sine zeta"  },
+    Description      -> "Sine zeta" },
   cz == {
     ParameterType    -> Internal,
     Value            -> 1/Sqrt[1+tz^2],
     InteractionOrder -> {QED,0},
     TeX              -> Subscript[c,\[Zeta]],
-    Description      -> "Cosine zeta"  },
+    Description      -> "Cosine zeta" },
   MLL == {
     ParameterType    -> Internal,
     Value            -> MW^2/(1-sw2),
  (* Value            -> (Transpose[Table[TAZZp[i,j],{i,3},{j,3}]].Table[MAZZp[i,j],{i,3},{j,3}].Table[TAZZp[i,j],{i,3},{j,3}])[[1,1]],*)
     InteractionOrder -> {QED,0},
-    Description      -> "ZZ'-Mixing"  },
+    Description      -> "ZZ'-Mixing" },
   MLR == {
     ParameterType    -> Internal,
     Value            -> -(MW^2(cw^2 gR^2 sb^2-sw2 gL^2))/(gL(1-sw2)Sqrt[cw^2 gR^2-sw2 gL^2]),
  (* Value            -> (Transpose[Table[TAZZp[i,j],{i,3},{j,3}]].Table[MAZZp[i,j],{i,3},{j,3}].Table[TAZZp[i,j],{i,3},{j,3}])[[1,3]],*)
     InteractionOrder -> {QED,0},
-    Description      -> "ZZ'-Mixing"  },
+    Description      -> "ZZ'-Mixing" },
   MRR == {
     ParameterType    -> Internal,
     Value            -> (1/4)(cp^2 gR^2 k^2 + gBL^2 sp^2 vL^2 + (cp gR + gBL sp)^2 vR^2 ),
  (* Value            -> (Transpose[Table[TAZZp[i,j],{i,3},{j,3}]].Table[MAZZp[i,j],{i,3},{j,3}].Table[TAZZp[i,j],{i,3},{j,3}])[[3,3]],*)
     InteractionOrder -> {QED,0},
-    Description      -> "ZZ'-Mixing"  },
+    Description      -> "ZZ'-Mixing" },
 (*
   tth2 == {
     ParameterType    -> Internal,
     Value            -> 2MLR/(MLL-MRR),
     InteractionOrder -> {QED,0},
     TeX              -> Subscript[t,2\[Theta]],
-    Description      -> "ZZ'-Mixing: Tan 2 theta"  },
+    Description      -> "ZZ'-Mixing: Tan 2 theta" },
   tth == {
     ParameterType    -> Internal,
     Value            -> (-1+Sqrt[1+tth2^2])/tth2,
     InteractionOrder -> {QED,0},
     TeX              -> Subscript[t,\[Theta]],
-    Description      -> "ZZ'-Mixing: Tan theta"  },
+    Description      -> "ZZ'-Mixing: Tan theta" },
 *)
   cth == {
     ParameterType    -> Internal,
@@ -1297,104 +1295,104 @@ M$Parameters = {
  (* Value            -> 1/Sqrt[1+tth^2],*)
     InteractionOrder -> {QED,0},
     TeX              -> Subscript[s,\[Theta]],
-    Description      -> "ZZ'-Mixing: Sine theta"  },
+    Description      -> "ZZ'-Mixing: Sine theta" },
   sth == {
     ParameterType    -> Internal,
     Value            -> (MRR-MLL+Sqrt[4MLR^2+(MRR-MLL)^2])/(2MLR Sqrt[1+(MRR-MLL+Sqrt[4MLR^2+(MRR-MLL)^2])^2/(4MLR^2)]),
  (* Value            -> tth/Sqrt[1+tth^2],*)
     InteractionOrder -> {QED,0},
     TeX              -> Subscript[c,\[Theta]],
-    Description      -> "ZZ'-Mixing: Cosine theta"  },
+    Description      -> "ZZ'-Mixing: Cosine theta" },
   sp == {
     ParameterType    -> Internal,
     Value            -> gBL/Sqrt[gBL^2+gR^2](*gY/gR*),
     InteractionOrder -> {QED,0},
     TeX              -> Subscript[s,\[Phi]],
-    Description      -> "ZZ'-Mixing: Sine phi"  },
+    Description      -> "ZZ'-Mixing: Sine phi" },
   cp == {
     ParameterType    -> Internal,
     Value            -> gR/Sqrt[gBL^2+gR^2](*gY/gBL*),
     InteractionOrder -> {QED,0},
     TeX              -> Subscript[c,\[Phi]],
-    Description      -> "ZZ'-Mixing: Cosine phi"  },
+    Description      -> "ZZ'-Mixing: Cosine phi" },
   mhp1 == {
     ParameterType    -> Internal,
     Value            -> Sqrt[(k vL (al3-al2)-(mu3 vR)/Sqrt[2])(vev^2/(k vL))],
     InteractionOrder -> {QED,0},
     TeX              -> Subscript[m,hp1],
-    Description      -> "Charged Higgs mass"  },
+    Description      -> "Charged Higgs mass" },
   mhm2 == {
     ParameterType    -> Internal,
     Value            -> Sqrt[(k vR (al3-al2)-(mu3 vL)/Sqrt[2])(vp^2/(k vR))],
     InteractionOrder -> {QED,0},
     TeX              -> Subscript[m,hp2],
-    Description      -> "Charged Higgs mass"  },
+    Description      -> "Charged Higgs mass" },
   ma1 == {
     ParameterType    -> Internal,
     Value            -> Sqrt[2k^2 lm2+(vL^2+vR^2)(al3-al2)-(vL vR mu3)/(Sqrt[2]k)],
     InteractionOrder -> {QED,0},
     TeX              -> Subscript[m,A1],
-    Description      -> "Pseudoscalar Higgs mass"  },
+    Description      -> "Pseudoscalar Higgs mass" },
   ma2 == {
     ParameterType    -> Internal,
     Value            -> Sqrt[-((vL^2 vR^2+k^2(vL^2+vR^2))mu3)/(Sqrt[2]k vL vR)],
     InteractionOrder -> {QED,0},
     TeX              -> Subscript[m,A2],
-    Description      -> "Pseudoscalar Higgs mass"  },
+    Description      -> "Pseudoscalar Higgs mass" },
   mh1 == {
     ParameterType    -> Internal,
     Value            -> ma1,
     InteractionOrder -> {QED,0},
     TeX              -> Subscript[m,h1],
-    Description      -> "Higgs Mass"  },
+    Description      -> "Higgs Mass" },
   a0 == {
     ParameterType    -> Internal,
     Value            -> 2(vL^2+vR^2)lm3-((vL^2 vR^2+k^2(vL^2+vR^2))mu3)/(Sqrt[2]vL vR k),
     InteractionOrder -> {QED,0},
-    Description      -> "Higgs mass parameter"  },
+    Description      -> "Higgs mass parameter" },
   a1 == {
     ParameterType    -> Internal,
     Value            -> 2k^2,
     InteractionOrder -> {QED,-2},
-    Description      -> "Higgs mass parameter"  },
+    Description      -> "Higgs mass parameter" },
   b0 == {
     ParameterType    -> Internal,
     Value         -> ((vL^2+vR^2)(4k^3vL vR(al1+al2)^2+Sqrt[2]vL^2 vR^2lm3 mu3)+Sqrt[2]k^2(4vL^2vR^2(al1+al2)+(vL^2-vR^2)^2lm3)mu3)/(k vL vR),
     InteractionOrder -> {QED,0},
-    Description      -> "Higgs mass parameter"  },
+    Description      -> "Higgs mass parameter" },
   b1 == {
     ParameterType    -> Internal,
     Value            -> (vL^2+vR^2)(4k^3vL vR(-lm3)+Sqrt[2]k^4mu3)/(k vL vR),
     InteractionOrder -> {QED,-2},
-    Description      -> "Higgs mass parameter"  },
+    Description      -> "Higgs mass parameter" },
   c0 == {
     ParameterType    -> Internal,
     Value            -> 2Sqrt[2]k^3(vL^2-vR^2)^2(al1+al2)^2mu3/(vL vR),
     InteractionOrder -> {QED,0},
-    Description      -> "Higgs mass parameter"  },
+    Description      -> "Higgs mass parameter" },
   c1 == {
     ParameterType    -> Internal,
     Value            -> -2Sqrt[2]k^3(vL^2-vR^2)^2 lm3 mu3/(vL vR),
     InteractionOrder -> {QED,-2},
-    Description      -> "Higgs mass parameter"  },
+    Description      -> "Higgs mass parameter" },
   lm1 == {
     ParameterType    -> Internal,
     Value            -> -(-mh0^6+a0 mh0^4+b0 mh0^2+c0)/(a1 mh0^4+b1 mh0^2+c1),
     InteractionOrder -> {QED,2},
     TeX              -> Subscript[\[Lambda],1],
-    Description      -> "Higgs quartic coupling"  },
+    Description      -> "Higgs quartic coupling" },
   mu1 == {
     ParameterType    -> Internal,
     Value            -> (vL^2+vR^2)(al1+al2)+k^2 lm1+(vL vR mu3)/(Sqrt[2]k),
     InteractionOrder -> {QED,0},
     TeX              -> Superscript[Subscript[\[Mu],1],2],
-    Description      -> "Higgs quadratic coupling"  },
+    Description      -> "Higgs quadratic coupling" },
   mu2 == {
     ParameterType    -> Internal,
     Value            -> k^2(al1+al2)+(vL^2+vR^2)lm3,
     InteractionOrder -> {QED,0},
     TeX              -> Superscript[Subscript[\[Mu],2],2],
-    Description      -> "Higgs quadratic coupling"  },
+    Description      -> "Higgs quadratic coupling" },
   MAZZp == {
     ParameterType    -> Internal,
     Indices          -> {Index[ngauge],Index[ngauge]},
@@ -1403,7 +1401,7 @@ M$Parameters = {
 			  MAZZp[3,1]->MAZZp[1,3], MAZZp[3,2]->MAZZp[2,3], MAZZp[3,3]->(1/4)gBL^2(vL^2+vR^2)},
     InteractionOrder -> {QED,0},
     TeX              -> MG0,
-    Description      -> "Neutral Gauge Bosons Mass Matrix"  },
+    Description      -> "Neutral Gauge Bosons Mass Matrix" },
   TAZZp == {
     ParameterType    -> Internal,
     Indices          -> {Index[ngauge],Index[ngauge]},
@@ -1412,42 +1410,42 @@ M$Parameters = {
 			 TAZZp[3,1]->-cp sw, TAZZp[3,2]->cp cw, TAZZp[3,3]->-sp},
     InteractionOrder -> {QED,0},
     TeX              -> TG0,
-    Description      -> "Neutral Gauge Bosons Rotation Matrix"  },
+    Description      -> "Neutral Gauge Bosons Rotation Matrix" },
   MZp == {
     ParameterType    -> Internal,
     Value            -> Sqrt[Tr[Table[MAZZp[i,j],{i,3},{j,3}]]-MZ^2],
     InteractionOrder -> {QED,0},
     TeX              -> Subscript[M,Z'],
-    Description      -> "Z'-Mass"  },
+    Description      -> "Z'-Mass" },
 (*
   MLL == {
     ParameterType    -> Internal,
     Value            -> (Transpose[Table[TAZZp[i,j],{i,3},{j,3}]].Table[MAZZp[i,j],{i,3},{j,3}].Table[TAZZp[i,j],{i,3},{j,3}])[[1,1]],
     InteractionOrder -> {QED,0},
-    Description      -> "ZZ'-Mixing"  },
+    Description      -> "ZZ'-Mixing" },
   MLR == {
     ParameterType    -> Internal,
     Value            -> (Transpose[Table[TAZZp[i,j],{i,3},{j,3}]].Table[MAZZp[i,j],{i,3},{j,3}].Table[TAZZp[i,j],{i,3},{j,3}])[[1,3]],
     InteractionOrder -> {QED,0},
-    Description      -> "ZZ'-Mixing"  },
+    Description      -> "ZZ'-Mixing" },
   MRR == {
     ParameterType    -> Internal,
     Value            -> (Transpose[Table[TAZZp[i,j],{i,3},{j,3}]].Table[MAZZp[i,j],{i,3},{j,3}].Table[TAZZp[i,j],{i,3},{j,3}])[[3,3]],
     InteractionOrder -> {QED,0},
-    Description      -> "ZZ'-Mixing"  },
+    Description      -> "ZZ'-Mixing" },
 (*
   tth2 == {
     ParameterType    -> Internal,
     Value            -> 2MLR/(MLL-MRR),
     InteractionOrder -> {QED,0},
     TeX              -> Subscript[t,2\[Theta]],
-    Description      -> "ZZ'-Mixing: Tan 2 theta"  },
+    Description      -> "ZZ'-Mixing: Tan 2 theta" },
   tth == {
     ParameterType    -> Internal,
     Value            -> (-1+Sqrt[1+tth2^2])/tth2,
     InteractionOrder -> {QED,0},
     TeX              -> Subscript[t,\[Theta]],
-    Description      -> "ZZ'-Mixing: Tan theta"  },
+    Description      -> "ZZ'-Mixing: Tan theta" },
 *)
   cth == {
     ParameterType    -> Internal,
@@ -1455,14 +1453,14 @@ M$Parameters = {
  (* Value            -> 1/Sqrt[1+tth^2],*)
     InteractionOrder -> {QED,0},
     TeX              -> Subscript[s,\[Theta]],
-    Description      -> "ZZ'-Mixing: Sine theta"  },
+    Description      -> "ZZ'-Mixing: Sine theta" },
   sth == {
     ParameterType    -> Internal,
     Value            -> (MRR-MLL+Sqrt[4MLR^2+(MRR-MLL)^2])/(2MLR Sqrt[1+(MRR-MLL+Sqrt[4MLR^2+(MRR-MLL)^2])^2/(4MLR^2)]),
  (* Value            -> tth/Sqrt[1+tth^2],*)
     InteractionOrder -> {QED,0},
     TeX              -> Subscript[c,\[Theta]],
-    Description      -> "ZZ'-Mixing: Cosine theta"  },
+    Description      -> "ZZ'-Mixing: Cosine theta" },
 *)
   MH == {
     ParameterType    -> Internal,
@@ -1473,32 +1471,32 @@ M$Parameters = {
 			  MH[3,1]->MH[1,3], MH[3,2]->MH[2,3], MH[3,3]->2vR^2 lm3-(k vL mu3)/(Sqrt[2]vR)},
     InteractionOrder -> {QED,0},
     TeX              -> Mh,
-    Description      -> "CP-even Higgs Mass Matrix"  },
+    Description      -> "CP-even Higgs Mass Matrix" },
   trmh == {
     ParameterType    -> Internal,
     Value            -> Tr[Table[MH[i,j],{i,3},{j,3}]],
     InteractionOrder -> {QED,0},
     TeX              -> TrMH,
-    Description      -> "CP-even Higgs mass matrix trace"  },
+    Description      -> "CP-even Higgs mass matrix trace" },
   detmh == {
     ParameterType    -> Internal,
     Value            -> Det[Table[MH[i,j],{i,3},{j,3}]],
     InteractionOrder -> {QED,0},
     TeX              -> DetMH,
-    Description      -> "CP-even Higgs mass matrix determinant"  },
+    Description      -> "CP-even Higgs mass matrix determinant" },
   mh2 == {
     ParameterType    -> Internal,
     Value            -> Sqrt[(1/2)(trmh-mh0^2-Sqrt[(trmh-mh0^2)^2-4detmh/mh0^2])],
     InteractionOrder -> {QED,0},
     TeX              -> Subscript[m,h2],
-    Description      -> "Higgs Mass"  },
+    Description      -> "Higgs Mass" },
   mh3 == {
     ParameterType    -> Internal,
  (* Value            -> Sqrt[(1/2)(trmh-mh0^2+Sqrt[(trmh-mh0^2)^2-4detmh/mh0^2])],*)
     Value            -> Sqrt[trmh-mh0^2-mh2^2],
     InteractionOrder -> {QED,0},
     TeX              -> Subscript[m,h3],
-    Description      -> "Higgs Mass"  },
+    Description      -> "Higgs Mass" },
   yl == {
     ParameterType    -> Internal,
     Indices          -> {Index[Generation],Index[Generation]},
@@ -1507,7 +1505,7 @@ M$Parameters = {
     InteractionOrder -> {QED,1},
     ParameterName    -> {yl[1,1] -> ye, yl[2,2] -> ym, yl[3,3] -> ytau},
     TeX              -> Superscript[y,l],
-    Description      -> "Lepton Yukawa couplings"  },
+    Description      -> "Lepton Yukawa couplings" },
   yn == {
     ParameterType    -> Internal,
     Indices          -> {Index[Generation],Index[Generation]},
@@ -1516,7 +1514,7 @@ M$Parameters = {
     InteractionOrder -> {QED,1},
     ParameterName    -> {yn[1,1] -> yne, yn[2,2] -> ynm, yn[3,3] -> yntau},
     TeX              -> Superscript[y,n],
-    Description      -> "Scotino Yukawa couplings"  },
+    Description      -> "Scotino Yukawa couplings" },
   ynu == {
     ParameterType    -> Internal,
     Indices          -> {Index[Generation],Index[Generation]},
@@ -1525,7 +1523,7 @@ M$Parameters = {
     InteractionOrder -> {QED,1},
     ParameterName    -> {ynu[1,1] -> ynue, ynu[2,2] -> ynum, ynu[3,3] -> ynutau},
     TeX              -> Superscript[y,\[Nu]],
-    Description      -> "Neutrino Yukawa couplings"  },
+    Description      -> "Neutrino Yukawa couplings" },
   yu == {
     ParameterType    -> Internal,
     Indices          -> {Index[Generation],Index[Generation]},
@@ -1534,7 +1532,7 @@ M$Parameters = {
     InteractionOrder -> {QED,1},
     ParameterName    -> {yu[1,1] -> yup, yu[2,2] -> yc, yu[3,3] -> yt},
     TeX              -> Superscript[y,u],
-    Description      -> "Up-type Yukawa couplings"  },
+    Description      -> "Up-type Yukawa couplings" },
   yd == {
     ParameterType    -> Internal,
     Indices          -> {Index[Generation],Index[Generation]},
@@ -1543,7 +1541,7 @@ M$Parameters = {
     InteractionOrder -> {QED,1},
     ParameterName    -> {yd[1,1] -> ydo, yd[2,2] -> ys, yd[3,3] -> yb},
     TeX              -> Superscript[y,d],
-    Description      -> "Down-type Yukawa couplings"  },
+    Description      -> "Down-type Yukawa couplings" },
   ydd == {
     ParameterType    -> Internal,
     Indices          -> {Index[Generation],Index[Generation]},
@@ -1552,7 +1550,7 @@ M$Parameters = {
     InteractionOrder -> {QED,1},
     ParameterName    -> {ydd[1,1] -> yddo, ydd[2,2] -> yds, ydd[3,3] -> ydb},
     TeX              -> Superscript[y,d'],
-    Description      -> "Exotic-Down-type Yukawa couplings"  },
+    Description      -> "Exotic-Down-type Yukawa couplings" },
 
   (* Higgs Functions Definitions for Neutral Higgs Mixing *)
 
@@ -1562,28 +1560,28 @@ M$Parameters = {
     Value            -> {XH[1] -> mh0^2, XH[2] -> mh2^2, XH[3] -> mh3^2 },
     InteractionOrder -> {QED,0},
     TeX              -> xh,
-    Description      -> "Squared CP-even Higgs Masses"  },
+    Description      -> "Squared CP-even Higgs Masses" },
   DH == {
     ParameterType    -> Internal,
     Indices          -> {Index[higgs],Index[higgs]},
     Value            -> {DH[i_,k_]:>Det[Drop[Table[MH[ii,jj]-KroneckerDelta[ii,jj] XH[k],{ii,3},{jj,3}],{i},{1}]]},
     InteractionOrder -> {QED,0},
     TeX              -> dh,
-    Description      -> "Higgs mass matrix minors determinants"  },
+    Description      -> "Higgs mass matrix minors determinants" },
   FH == {
     ParameterType    -> Internal,
     Indices          -> {Index[higgs],Index[higgs]},
     Value            -> {FH[i_,k_]:>(-1)^(3+i)DH[i,k]/DH[3,k]},
     InteractionOrder -> {QED,0},
     TeX              -> fh,
-    Description      -> "Higgs Mixing functions"  },
+    Description      -> "Higgs Mixing functions" },
   FVH == {
     ParameterType    -> Internal,
     Indices          -> {Index[higgs],Index[higgs],Index[higgs]},
     Value            -> {FVH[kk_?NumericQ, ii_?NumericQ, jj_?NumericQ] :> If[kk==1,FH[ii,jj],If[jj<kk,0,FVH[kk-1,ii,jj]-FVH[kk-1,ii,kk-1] Sum[FVH[1,ll,jj]FVH[kk-1,ll,kk-1],{ll,3}]/Sum[FVH[kk-1,ll,kk-1]^2,{ll,3}]]] },
     InteractionOrder -> {QED,0},
     TeX              -> fvh,
-    Description      -> "Higgs Mixing recursion functions"  },
+    Description      -> "Higgs Mixing recursion functions" },
   VH == {
     ParameterType    -> Internal,
     Indices          -> {Index[higgs],Index[higgs]},
@@ -1593,7 +1591,7 @@ M$Parameters = {
 			  VH[2,1] -> THL0, VH[2,2] -> THL2, VH[2,3] -> THL3, 
 			  VH[3,1] -> THR0, VH[3,2] -> THR2, VH[3,3] -> THR3 },
     TeX              -> vh,
-    Description      -> "CP-even Higgs mixing"  },
+    Description      -> "CP-even Higgs mixing" },
 
 (* Definitions for the effective hYY and hgg Lagrangian *)
 
@@ -1603,14 +1601,14 @@ M$Parameters = {
     Value            -> {MP[1]->MT, MP[2]->MW, MP[3]->MWp, MP[4]->mhp1, MP[5]->mhm2},
     InteractionOrder -> {QED,0},
     TeX              -> mp,
-    Description      -> "Loop particle masses"  },
+    Description      -> "Loop particle masses" },
   XP == {
     ParameterType    -> Internal,
     Indices          -> {Index[bjorkeneff]},
     Value            -> {XP[j_]:>mh0^2/(4MP[j]^2)},
     InteractionOrder -> {QED,0},
     TeX              -> xp,
-    Description      -> "Bjorken parameter"  },
+    Description      -> "Bjorken parameter" },
   FP == {
     ParameterType    -> Internal,
     Indices          -> {Index[bjorkeneff]},
@@ -1621,17 +1619,17 @@ M$Parameters = {
 			  FP[5]:>Module[{},-(xs-ArcSin[Sqrt[xs]]^2) xs^(-2)/.xs->XP[5]]},
     InteractionOrder -> {QED,0},
     TeX              -> fp,
-    Description      -> "Loop functions"  },
+    Description      -> "Loop functions" },
   mu11 == {
     ParameterType    -> Internal,
     Value            -> THP0(lm1 k cb^2+(al3-al2)vL sb cb+(al1+al3)k sb^2)+THL0(lm3 vL sb^2+(al3-al2)k sb cb+(al1+al3)vL cb^2)+THR0(lm4 vR sb^2-Sqrt[2]mu3 sb cb+(al1+al2)vR cb^2),
     TeX              -> Subscript[\[Mu],11],
-    Description      -> "Neutral-Charged Higgs Coupling"  },
+    Description      -> "Neutral-Charged Higgs Coupling" },
   mu22 == {
     ParameterType    -> Internal,
     Value            -> THP0(lm1 k cz^2+(al3-al2)vR sz cz+(al1+al3)k sz^2)+THR0(lm3 vR sz^2+(al3-al2)k sz cz+(al1+al3)vR cz^2)+THL0(lm4 vL sz^2-Sqrt[2]mu3 sz cz+(al1+al2)vL cz^2),
     TeX              -> Subscript[\[Mu],22],
-    Description      -> "Neutral-Charged Higgs Coupling"  },
+    Description      -> "Neutral-Charged Higgs Coupling" },
   LP == {
     ParameterType    -> Internal,
     Indices          -> {Index[bjorkeneff]},
@@ -1642,13 +1640,13 @@ M$Parameters = {
 			  LP[5]:>Module[{}, (-mu22 vev/MP[5]^2) fs/.fs->FP[5]]},
     InteractionOrder -> {QED,0},
     TeX              -> Subscript[\[Lambda],hpp],
-    Description      -> "loop-induced higgs Couplings"  },
+    Description      -> "loop-induced higgs Couplings" },
   Ghaa == {
     ParameterType    -> Internal,
     Value            -> ( 1 ) (1/2)Sqrt[Gf Sqrt[2]](aEW/(4Pi)) Sum[LP[i],{i,5}],
     InteractionOrder -> {HIW,1},
     TeX              -> Subscript[G,h\[Gamma]\[Gamma]],
-    Description      -> "loop-induced h-aa Coupling"  },
+    Description      -> "loop-induced h-aa Coupling" },
   Ghgg == {
     ParameterType    -> Internal,
     Value            -> (3/8) (1/2)Sqrt[Gf Sqrt[2]] (aS/(4Pi)) LP[1],
