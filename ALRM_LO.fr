@@ -635,13 +635,6 @@ M$ClassesDescription = {
     QuantumNumbers -> {BL -> 0},
     Definitions    -> { Phi[1,1] -> (H1 +I A1)/Sqrt[2], Phi[1,2] -> (cb HP1 +sb GP1), Phi[2,1] -> cz HM2 + sz GM2, 
 			Phi[2,2] -> (k+THP0 H0+THP2 H2+THP3 H3+I((1/Sqrt[1+tb^2+tz^2])A2-(tz/Sqrt[1+tz^2])G10+(tb/Sqrt[(1+tz^2)(1+tb^2+tz^2)])G20))/Sqrt[2] }  },
-  S[132] == {
-    ClassName      -> TPhi, 
-    Unphysical     -> True, 
-    Indices        -> {Index[LSU2D],Index[RSU2D]},
-    SelfConjugate  -> False,
-    QuantumNumbers -> {BL -> 0},
-    Definitions    -> { TPhi[1,1] ->  HC[Phi[2,2]], TPhi[1,2] -> -HC[Phi[2,1]] , TPhi[2,1] -> -HC[Phi[1,2]], TPhi[2,2] -> HC[Phi[1,1]] }  },
   S[141] == {
     ClassName      -> ChiL, 
     Unphysical     -> True, 
@@ -650,13 +643,6 @@ M$ClassesDescription = {
     QuantumNumbers -> {BL -> 1/2},
     Definitions    -> { ChiL[1] -> (-sb HP1 + cb GP1) , 
 			ChiL[2] -> (vL+THL0 H0+THL2 H2+THL3 H3 + I ((-tb/Sqrt[1+tb^2+tz^2]) A2 +(Sqrt[(1+tz^2)/(1+tb^2+tz^2)]) G20))/Sqrt[2]}  },
-  S[142] == {
-    ClassName      -> TChiL, 
-    Unphysical     -> True, 
-    Indices        -> {Index[LSU2D]},
-    SelfConjugate  -> False,
-    QuantumNumbers -> {BL -> -1/2},
-    Definitions    -> { TChiL[1] -> HC[ChiL[2]], TChiL[2] -> - HC[ChiL[1]]}  },
   S[151] == {
     ClassName      -> ChiR, 
     Unphysical     -> True, 
@@ -664,14 +650,7 @@ M$ClassesDescription = {
     SelfConjugate  -> False,
     QuantumNumbers -> {BL -> 1/2},
     Definitions    -> { ChiR[1] -> -sz HM2bar + cz GM2bar, 
-			ChiR[2] -> (vR+THR0 H0+THR2 H2+THR3 H3+I ((tz/Sqrt[1+tb^2+tz^2])A2 +(1/Sqrt[1+tz^2])G10+(tb tz/Sqrt[(1+tz^2)(1+tb^2+tz^2)])G20))/Sqrt[2]}  },
-  S[152] == {
-    ClassName      -> TChiR, 
-    Unphysical     -> True, 
-    Indices        -> {Index[RSU2D]},
-    SelfConjugate  -> False,
-    QuantumNumbers -> {BL -> -1/2},
-    Definitions    -> { TChiR[1] -> HC[ChiR[2]], TChiR[2] -> - HC[ChiR[1]]}  }	};
+			ChiR[2] -> (vR+THR0 H0+THR2 H2+THR3 H3+I ((tz/Sqrt[1+tb^2+tz^2])A2 +(1/Sqrt[1+tz^2])G10+(tb tz/Sqrt[(1+tz^2)(1+tb^2+tz^2)])G20))/Sqrt[2]}  }	};
 
  (* ************************** *) 
  (* *****     Gauge      ***** *) 
@@ -736,10 +715,10 @@ Sum[(del[Phibar[ii,jj],mu]+(I/2)(gL Wi[mu,bb] HC[PauliSigma[bb,ii,ll]] Phibar[ll
 
 (* Higgs Potential *)
 
-LHiggspot := Block[{ii,jj,kk,ll,feynmangaugerules},
+LHiggspot := Block[{ii,jj,kk,kk1,kk2,kk3,kk4,ll,feynmangaugerules},
   feynmangaugerules = If[Not[FeynmanGauge], {G10|G20|GP1|GM2|GP1bar|GM2bar ->0}, {}];
 -ExpandIndices[
--mu1 (Phibar[ii,jj]Phi[ii,jj])+lm1 (Phibar[ii,jj]Phi[ii,jj])(Phibar[kk,ll]Phi[kk,ll])+lm2 (Phibar[ii,jj]TPhi[ii,jj])(TPhibar[kk,ll]Phi[kk,ll])-mu2 (ChiLbar[ii] ChiL[ii] + ChiRbar[ii] ChiR[ii])+lm3 ((ChiLbar[ii] ChiL[ii])(ChiLbar[jj] ChiL[jj])+(ChiRbar[kk] ChiR[kk])(ChiRbar[ll] ChiR[ll]))+2lm4 (ChiLbar[ii] ChiL[ii]) (ChiRbar[jj] ChiR[jj])+2al1 (Phibar[ii,jj]Phi[ii,jj]) (ChiLbar[kk] ChiL[kk] + ChiRbar[kk] ChiR[kk])+2al2 (ChiLbar[ii] Phi[ii,jj] Phibar[kk,jj] ChiL[kk] + ChiRbar[ii] Phibar[jj,ii] Phi[jj,kk] ChiR[kk])+2al3 (ChiLbar[ii] TPhi[ii,jj] TPhibar[kk,jj] ChiL[kk] + ChiRbar[ii] TPhibar[jj,ii] TPhi[jj,kk] ChiR[kk])+mu3 (ChiLbar[ii] Phi[ii,jj] ChiR[jj] + ChiRbar[ii] Phibar[jj,ii] ChiL[jj]),FlavorExpand->{LSU2D,RSU2D}]/.feynmangaugerules ]; 
+-mu1 (Phibar[ii,jj]Phi[ii,jj]) + lm1 (Phibar[ii,jj]Phi[ii,jj])(Phibar[kk,ll]Phi[kk,ll]) + lm2 (Phibar[ii,jj] (-Eps[ii,kk1]HC[Phi[kk1,kk2]]Eps[kk2,jj])) ((-Eps[kk,kk1]Phi[kk1,kk2]Eps[kk2,ll]) Phi[kk,ll]) - mu2 (ChiLbar[ii] ChiL[ii] + ChiRbar[ii] ChiR[ii]) + lm3 ((ChiLbar[ii] ChiL[ii])(ChiLbar[jj] ChiL[jj]) + (ChiRbar[kk] ChiR[kk])(ChiRbar[ll] ChiR[ll])) + 2lm4 (ChiLbar[ii] ChiL[ii]) (ChiRbar[jj] ChiR[jj]) + 2al1 (Phibar[ii,jj]Phi[ii,jj]) (ChiLbar[kk] ChiL[kk] + ChiRbar[kk] ChiR[kk]) + 2al2 (ChiLbar[ii] Phi[ii,jj] Phibar[kk,jj] ChiL[kk] + ChiRbar[ii] Phibar[jj,ii] Phi[jj,kk] ChiR[kk]) + 2al3 Sum[(ChiLbar[ii] (-Eps[ii,kk1]HC[Phi[kk1,kk2]]Eps[kk2,jj]) (HC[PauliMatrix[2].Table[HC[Phi[kk3,kk4]],{kk3,2},{kk4,2}].PauliMatrix[2]][[jj,kk]]) ChiL[kk] + ChiRbar[ii] (HC[PauliMatrix[2].Table[HC[Phi[kk3,kk4]],{kk3,2},{kk4,2}].PauliMatrix[2]][[ii,jj]]) (-Eps[jj,kk1]HC[Phi[kk1,kk2]]Eps[kk2,kk]) ChiR[kk]),{ii,2},{jj,2},{kk,2},{kk1,2},{kk2,2}] + mu3 (ChiLbar[ii] Phi[ii,jj] ChiR[jj] + ChiRbar[ii] Phibar[jj,ii] ChiL[jj]),FlavorExpand->{LSU2D,RSU2D}]/.feynmangaugerules ]; 
 
 LHiggs := LHiggskin + LHiggspot;
 
@@ -748,12 +727,12 @@ LHiggs := LHiggskin + LHiggspot;
 LYukawa := Block[{sp,ii,jj,cc,ff1,ff2,ff3,yuk,feynmangaugerules},
   feynmangaugerules = If[Not[FeynmanGauge], {G10|G20|GP1|GM2|GP1bar|GM2bar ->0}, {}];
    yuk = ExpandIndices[
- (* Quarks *) -yu[ff1,ff2]  QLbar[sp,ii,ff1,cc].QR[sp,jj,ff2,cc] TPhi[ii,jj]
+ (* Quarks *) -yu[ff1,ff2]  QLbar[sp,ii,ff1,cc].QR[sp,jj,ff2,cc] (-Eps[ii,kk1]HC[Phi[kk1,kk2]]Eps[kk2,jj])
 	      -yd[ff2,ff3]  CKML[ff1,ff2] QLbar[sp,ii,ff1,cc].dR[sp,ff3,cc] ChiL[ii]
 	      -ydd[ff2,ff3] CKMR[ff1,ff2] QRbar[sp,ii,ff1,cc].ddL[sp,ff3,cc] ChiR[ii]
  (* Leptons *)-yl[ff1,ff2]  LLbar[sp,ii,ff1].LR[sp,jj,ff2] Phi[ii,jj]
-	      -ynu[ff2,ff3] MNSL[ff1,ff2] LLbar[sp,ii,ff1].nuR[sp,ff3] TChiL[ii]
-	      -yn[ff2,ff3]  MNSR[ff1,ff2] LRbar[sp,ii,ff1].nL[sp,ff3] TChiR[ii], FlavorExpand->{LSU2D,RSU2D}];
+	      -ynu[ff2,ff3] MNSL[ff1,ff2] LLbar[sp,ii,ff1].nuR[sp,ff3] ChiLbar[jj] Eps[ii, jj]
+	      -yn[ff2,ff3]  MNSR[ff1,ff2] LRbar[sp,ii,ff1].nL[sp,ff3]  ChiRbar[jj] Eps[ii, jj], FlavorExpand->{LSU2D,RSU2D}];
   yuk=yuk/.{CKML[a_,b_] Conjugate[CKML[a_,c_]]->IndexDelta[b,c], CKML[b_,a_] Conjugate[CKML[c_,a_]]->IndexDelta[b,c], CKMR[a_,b_] Conjugate[CKMR[a_,c_]]->IndexDelta[b,c], CKMR[b_,a_] Conjugate[CKMR[c_,a_]]->IndexDelta[b,c],
   MNSL[a_,b_]Conjugate[MNSL[a_,c_]]->IndexDelta[b,c],MNSL[b_,a_]Conjugate[MNSL[c_,a_]]->IndexDelta[b,c],
   MNSR[a_,b_]Conjugate[MNSR[a_,c_]]->IndexDelta[b,c],MNSR[b_,a_]Conjugate[MNSR[c_,a_]]->IndexDelta[b,c]};yuk+HC[yuk]/.feynmangaugerules];
@@ -1217,15 +1196,13 @@ M$Parameters = {
     Description      -> "EW SSB scale (v)"  },
   vp == {
     ParameterType    -> Internal,
-(*    Value            -> (2sw/ee)Sqrt[(MW^4 tb^4-MZ^4(1-2 sw2)(1+tb^2)^2+MZ^2 MW^2(1+tb^2)(1+tb^2-(1+3tb^2)sw2))/((MW^2-MZ^2(1-sw2))(1+tb^2)^2)],*)
-(*    Value            -> Sqrt[(-16 MW^2 (MW - MZ) MZ^2 (MW + MZ) sw^2 (1 + tb^2)^2 + 4 gR^2 MZ^2 (1 + tb^2) (MZ^2 (-1 + sw^2) (1 + tb^2) + MW^2 (1 + (1 - 2 sw^2) tb^2)) vev^2 + gR^4 MW^2 tb^4 vev^4)/(gR^4 (MW^2 + MZ^2 (-1 + sw^2)) (1 + tb^2)^2 vev^2)],*)
     Value            -> Sqrt[(16 MZ^2 (MW^2 - MZ^2) (1 + tb^2)^2 + 4 gR^2 MZ^2 (1 + tb^2) (MZ^2 (-1 + sw^2) (1 + tb^2) + MW^2 (1 + (1 - 2 sw^2) tb^2)) vev^2 + gR^4 MW^2 tb^4 vev^4)/(gR^4 (MW^2 + MZ^2 (-1 + sw^2)) (1 + tb^2)^2 vev^2)],
     InteractionOrder -> {QED,-1},
     TeX              -> v',
     Description      -> "Weak Right and BL SSB scale (v')"  },
   MWp == {
     ParameterType    -> Internal,
-    Value            -> gR*vp/2(*gR*vp/2*),
+    Value            -> gR*vp/2,
     InteractionOrder -> {QED,0},
     TeX              -> Subscript[M,W'],
     Description      -> "W' mass"  },
@@ -1340,14 +1317,6 @@ M$Parameters = {
     InteractionOrder -> {QED,0},
     TeX              -> Subscript[c,\[Phi]],
     Description      -> "ZZ'-Mixing: Cosine phi"  },
-(*
-  MZp == {
-    ParameterType    -> Internal,
-    Value            -> Sqrt[MLL+MRR-MZ^2],
-    InteractionOrder -> {QED,0},
-    TeX              -> Subscript[M,Z'],
-    Description      -> "Z'-Mass"  },
-*)
   mhp1 == {
     ParameterType    -> Internal,
     Value            -> Sqrt[(k vL (al3-al2)-(mu3 vR)/Sqrt[2])(vev^2/(k vL))],
@@ -1453,19 +1422,16 @@ M$Parameters = {
 (*
   MLL == {
     ParameterType    -> Internal,
- (* Value            -> MW^2/(1-sw2),*)
     Value            -> (Transpose[Table[TAZZp[i,j],{i,3},{j,3}]].Table[MAZZp[i,j],{i,3},{j,3}].Table[TAZZp[i,j],{i,3},{j,3}])[[1,1]],
     InteractionOrder -> {QED,0},
     Description      -> "ZZ'-Mixing"  },
   MLR == {
     ParameterType    -> Internal,
- (* Value            -> -(MW^2(cw^2 gR^2 sb^2-sw2 gL^2))/(gL(1-sw2)Sqrt[cw^2 gR^2-sw2 gL^2]),*)
     Value            -> (Transpose[Table[TAZZp[i,j],{i,3},{j,3}]].Table[MAZZp[i,j],{i,3},{j,3}].Table[TAZZp[i,j],{i,3},{j,3}])[[1,3]],
     InteractionOrder -> {QED,0},
     Description      -> "ZZ'-Mixing"  },
   MRR == {
     ParameterType    -> Internal,
- (* Value            -> (1/4)(cp^2 gR^2 k^2 + gBL^2 sp^2 vL^2 + (cp gR + gBL sp)^2 vR^2 ),*)
     Value            -> (Transpose[Table[TAZZp[i,j],{i,3},{j,3}]].Table[MAZZp[i,j],{i,3},{j,3}].Table[TAZZp[i,j],{i,3},{j,3}])[[3,3]],
     InteractionOrder -> {QED,0},
     Description      -> "ZZ'-Mixing"  },
@@ -1502,9 +1468,9 @@ M$Parameters = {
     ParameterType    -> Internal,
     Indices          -> {Index[higgs],Index[higgs]},
     Value            -> {MH[1,1]->2k^2 lm1-(vL vR mu3)/(Sqrt[2]k), MH[1,2]->2k vL(al1+al2)+(vR mu3)/(Sqrt[2]), 
-			 MH[1,3]->2k vR(al1+al2)+(vL mu3)/(Sqrt[2]), 
-			 MH[2,1]->MH[1,2], MH[2,2]->2vL^2 lm3-(k vR mu3)/(Sqrt[2]vL), MH[2,3]->2vL vR lm3-(k mu3)/(Sqrt[2]), 
-			 MH[3,1]->MH[1,3], MH[3,2]->MH[2,3], MH[3,3]->2vR^2 lm3-(k vL mu3)/(Sqrt[2]vR)},
+			  MH[1,3]->2k vR(al1+al2)+(vL mu3)/(Sqrt[2]), 
+			  MH[2,1]->MH[1,2], MH[2,2]->2vL^2 lm3-(k vR mu3)/(Sqrt[2]vL), MH[2,3]->2vL vR lm3-(k mu3)/(Sqrt[2]), 
+			  MH[3,1]->MH[1,3], MH[3,2]->MH[2,3], MH[3,3]->2vR^2 lm3-(k vL mu3)/(Sqrt[2]vR)},
     InteractionOrder -> {QED,0},
     TeX              -> Mh,
     Description      -> "CP-even Higgs Mass Matrix"  },
@@ -1528,7 +1494,7 @@ M$Parameters = {
     Description      -> "Higgs Mass"  },
   mh3 == {
     ParameterType    -> Internal,
-(*    Value            -> Sqrt[(1/2)(trmh-mh0^2+Sqrt[(trmh-mh0^2)^2-4detmh/mh0^2])],*)
+ (* Value            -> Sqrt[(1/2)(trmh-mh0^2+Sqrt[(trmh-mh0^2)^2-4detmh/mh0^2])],*)
     Value            -> Sqrt[trmh-mh0^2-mh2^2],
     InteractionOrder -> {QED,0},
     TeX              -> Subscript[m,h3],
@@ -1629,7 +1595,7 @@ M$Parameters = {
     TeX              -> vh,
     Description      -> "CP-even Higgs mixing"  },
 
-(* Definitions for the effective h -> aa and h -> gg Lagrangian *)
+(* Definitions for the effective hYY and hgg Lagrangian *)
 
   MP == {
     ParameterType    -> Internal,
