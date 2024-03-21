@@ -1033,6 +1033,14 @@ M$Parameters = {
     TeX           -> Subscript[sL,13],
     Description   -> "Quark mixing: SinTheta13,PDG-94"},
     
+  delL13 == {
+    ParameterType -> External,
+    BlockName     -> CKMBLOCK,
+    OrderBlock    -> 31,
+    Value         -> 68.8Pi/180,
+    TeX           -> Subscript[\[Delta]L,13],
+    Description   -> "Left CKM CP-Violation Phase"},
+    
   sR12 == {
     ParameterType -> External,
     BlockName     -> CKMBLOCK,
@@ -1054,6 +1062,13 @@ M$Parameters = {
     Value         -> 0.0035,
     TeX           -> Subscript[sR,13],
     Description   -> "Right Quark mixing: SinThetaR13,PDG-194"},
+  delR13 == {
+    ParameterType -> External,
+    BlockName     -> CKMBLOCK,
+    OrderBlock    -> 41,
+    Value         -> 68.8Pi/180,
+    TeX           -> Subscript[\[Delta]R,13],
+    Description   -> "Right CKM CP-Violation Phase"},
     
   (* Internal Parameters *)
 
@@ -1105,18 +1120,18 @@ M$Parameters = {
     Indices     -> {Index[Generation],Index[Generation]},
     TensorClass -> CKML,
     Unitary     -> True,
-    Value       -> {CKML[1,1] ->  cL12*cL13, CKML[1,2] -> sL12*cL13, CKML[1,3] -> sL13,
-                    CKML[2,1] -> -sL12*cL23-cL12*sL23*sL13, CKML[2,2] ->  cL12*cL23-sL12*sL23*sL13, CKML[2,3] -> sL23*cL13,
-                    CKML[3,1] ->  sL12*sL23-cL12*cL23*sL13, CKML[3,2] -> -cL12*sL23-sL12*cL23*sL13, CKML[3,3] -> cL23*cL13},
+    Value       -> {CKML[1,1] ->  cL12*cL13, CKML[1,2] -> sL12*cL13, CKML[1,3] -> sL13 Exp[-I delL13],
+                    CKML[2,1] -> -sL12*cL23-cL12*sL23*sL13 Exp[I delL13], CKML[2,2] ->  cL12*cL23-sL12*sL23*sL13 Exp[I delL13], CKML[2,3] -> sL23*cL13,
+                    CKML[3,1] ->  sL12*sL23-cL12*cL23*sL13 Exp[I delL13], CKML[3,2] -> -cL12*sL23-sL12*cL23*sL13 Exp[I delL13], CKML[3,3] -> cL23*cL13},
     TeX         -> Superscript[VL,CKM],
     Description -> "Left CKM-Matrix"},
   CKMR == {
     Indices     -> {Index[Generation],Index[Generation]},
     TensorClass -> CKMR,
     Unitary     -> True,
-    Value       -> {CKMR[1,1] ->  cR12*cR13, CKMR[1,2] -> sR12*cL13, CKMR[1,3] -> sR13,
-                    CKMR[2,1] -> -sR12*cR23-cR12*sR23*sR13, CKMR[2,2] ->  cR12*cR23-sR12*sR23*sR13, CKMR[2,3] -> sR23*cR13,
-                    CKMR[3,1] ->  sR12*sR23-cR12*cR23*sR13, CKMR[3,2] -> -cR12*sR23-sR12*cR23*sR13, CKMR[3,3] -> cR23*cR13},
+    Value       -> {CKMR[1,1] ->  cR12*cR13, CKMR[1,2] -> sR12*cL13, CKMR[1,3] -> sR13 Exp[-I delR13],
+                    CKMR[2,1] -> -sR12*cR23-cR12*sR23*sR13 Exp[I delR13], CKMR[2,2] ->  cR12*cR23-sR12*sR23*sR13 Exp[I delR13], CKMR[2,3] -> sR23*cR13,
+                    CKMR[3,1] ->  sR12*sR23-cR12*cR23*sR13 Exp[I delR13], CKMR[3,2] -> -cR12*sR23-sR12*cR23*sR13 Exp[I delR13], CKMR[3,3] -> cR23*cR13},
     TeX         -> Superscript[VR,CKM],
     Description -> "Right CKM-Matrix"},
   MNSL == {
@@ -1145,7 +1160,7 @@ M$Parameters = {
     Description      -> "Electroweak coupling constant" },
   ee == {
     ParameterType    -> Internal,
-    Value            -> Sqrt[4 Pi aEW],
+    Value            -> Sqrt[4Pi aEW],
     InteractionOrder -> {QED,1},
     TeX              -> e,
     Description      -> "Electric coupling constant" },
@@ -1387,8 +1402,8 @@ M$Parameters = {
     ParameterType    -> Internal,
     Indices          -> {Index[ngauge],Index[ngauge]},
     Value            -> {TAZZp[1,1]-> cw, TAZZp[1,2]->sw, TAZZp[1,3]->0, 
-			 TAZZp[2,1]->-sp sw, TAZZp[2,2]->sp cw, TAZZp[2,3]->cp, 
-			 TAZZp[3,1]->-cp sw, TAZZp[3,2]->cp cw, TAZZp[3,3]->-sp},
+			  TAZZp[2,1]->-sp sw, TAZZp[2,2]->sp cw, TAZZp[2,3]->cp, 
+			  TAZZp[3,1]->-cp sw, TAZZp[3,2]->cp cw, TAZZp[3,3]->-sp, Conjugate[TAZZp[i_,j_]]->TAZZp[i,j] },
     InteractionOrder -> {QED,0},
     TeX              -> TG0,
     Description      -> "Neutral Gauge Bosons Rotation Matrix" },
