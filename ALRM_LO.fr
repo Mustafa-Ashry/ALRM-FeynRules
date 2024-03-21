@@ -1037,7 +1037,7 @@ M$Parameters = {
     ParameterType -> External,
     BlockName     -> CKMBLOCK,
     OrderBlock    -> 31,
-    Value         -> 68.8Pi/180,
+    Value         -> 1.20,
     TeX           -> Subscript[\[Delta]L,13],
     Description   -> "Left CKM CP-Violation Phase"},
     
@@ -1066,7 +1066,7 @@ M$Parameters = {
     ParameterType -> External,
     BlockName     -> CKMBLOCK,
     OrderBlock    -> 41,
-    Value         -> 68.8Pi/180,
+    Value         -> 1.20,
     TeX           -> Subscript[\[Delta]R,13],
     Description   -> "Right CKM CP-Violation Phase"},
     
