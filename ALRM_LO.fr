@@ -1017,21 +1017,21 @@ M$Parameters = {
     OrderBlock    -> 1,
     Value         -> 0.221,
     TeX           -> Subscript[sL,12],
-    Description   -> "Quark mixing: SinTheta12,PDG-94"},
+    Description   -> "Left Quark mixing: SinTheta12,PDG-94"},
   sL23 == {
     ParameterType -> External,
     BlockName     -> CKMBLOCK,
     OrderBlock    -> 2,
     Value         -> 0.040,
     TeX           -> Subscript[sL,23],
-    Description   -> "Quark mixing: SinTheta23,PDG-94"},
+    Description   -> "Left Quark mixing: SinTheta23,PDG-94"},
   sL13 == {
     ParameterType -> External,
     BlockName     -> CKMBLOCK,
     OrderBlock    -> 3,
     Value         -> 0.0035,
     TeX           -> Subscript[sL,13],
-    Description   -> "Quark mixing: SinTheta13,PDG-94"},
+    Description   -> "Left Quark mixing: SinTheta13,PDG-94"},
     
   delL13 == {
     ParameterType -> External,
@@ -1065,10 +1065,71 @@ M$Parameters = {
   delR13 == {
     ParameterType -> External,
     BlockName     -> CKMBLOCK,
-    OrderBlock    -> 41,
+    OrderBlock    -> 32,
     Value         -> 1.20,
     TeX           -> Subscript[\[Delta]R,13],
     Description   -> "Right CKM CP-Violation Phase"},
+    
+  ssL12 == {
+    ParameterType -> External,
+    BlockName     -> MNSBLOCK,
+    OrderBlock    -> 1,
+    Value         -> 0.551,
+    TeX           -> Subscript[ssL,12],
+    Description   -> "Left Lepton mixing: SinTheta12"},
+  ssL23 == {
+    ParameterType -> External,
+    BlockName     -> MNSBLOCK,
+    OrderBlock    -> 2,
+    Value         -> 0.756,
+    TeX           -> Subscript[ssL,23],
+    Description   -> "Left Lepton mixing: SinTheta23"},
+  ssL13 == {
+    ParameterType -> External,
+    BlockName     -> MNSBLOCK,
+    OrderBlock    -> 3,
+    Value         -> 0.149,
+    TeX           -> Subscript[ssL,13],
+    Description   -> "Left Lepton mixing: SinTheta13"},
+    
+  delLCP == {
+    ParameterType -> External,
+    BlockName     -> MNSBLOCK,
+    OrderBlock    -> 31,
+    Value         -> 3.438,
+    TeX           -> Subscript[\[Delta]L,CP],
+    Description   -> "Left MNS CP-Violation Phase"},
+    
+  ssR12 == {
+    ParameterType -> External,
+    BlockName     -> MNSBLOCK,
+    OrderBlock    -> 1,
+    Value         -> 0.551,
+    TeX           -> Subscript[ssR,12],
+    Description   -> "Right Lepton mixing: SinTheta12"},
+  ssR23 == {
+    ParameterType -> External,
+    BlockName     -> MNSBLOCK,
+    OrderBlock    -> 2,
+    Value         -> 0.756,
+    TeX           -> Subscript[ssR,23],
+    Description   -> "Right Lepton mixing: SinTheta23"},
+  ssR13 == {
+    ParameterType -> External,
+    BlockName     -> MNSBLOCK,
+    OrderBlock    -> 3,
+    Value         -> 0.149,
+    TeX           -> Subscript[ssR,13],
+    Description   -> "Right Lepton mixing: SinTheta13"},
+    
+  delRCP == {
+    ParameterType -> External,
+    BlockName     -> MNSBLOCK,
+    OrderBlock    -> 32,
+    Value         -> 3.438,
+    TeX           -> Subscript[\[Delta]R,CP],
+    Description   -> "Right MNS CP-Violation Phase"},
+    
     
   (* Internal Parameters *)
 
@@ -1116,6 +1177,50 @@ M$Parameters = {
     TeX           -> Subscript[cR,13],
     Description   -> "Right Quark mixing: CosThetaR13,PDG-194"},
 
+  ccL12 == {
+    ParameterType -> Internal,
+    BlockName     -> MNSBLOCK,
+    OrderBlock    -> 4,
+    Value         -> Sqrt[1-ssL12^2],
+    TeX           -> Subscript[ccL,12],
+    Description   -> "Left Lepton mixing: CosTheta12,PDG-94"},
+  ccL23 == {
+    ParameterType -> Internal,
+    BlockName     -> MNSBLOCK,
+    OrderBlock    -> 5,
+    Value         -> Sqrt[1-ssL23^2],
+    TeX           -> Subscript[ccL,23],
+    Description   -> "Left Lepton mixing: CosTheta23,PDG-94"},
+  ccL13 == {
+    ParameterType -> Internal,
+    BlockName     -> MNSBLOCK,
+    OrderBlock    -> 6,
+    Value         -> Sqrt[1-ssL13^2],
+    TeX           -> Subscript[ccL,13],
+    Description   -> "Left Lepton mixing: CosTheta13,PDG-94"},
+
+  ccR12 == {
+    ParameterType -> Internal,
+    BlockName     -> MNSBLOCK,
+    OrderBlock    -> 10,
+    Value         -> Sqrt[1-ssR12^2],
+    TeX           -> Subscript[ccR,12],
+    Description   -> "Right Lepton mixing: CosThetaR12,PDG-194"},
+  ccR23 == {
+    ParameterType -> Internal,
+    BlockName     -> MNSBLOCK,
+    OrderBlock    -> 11,
+    Value         -> Sqrt[1-ssR23^2],
+    TeX           -> Subscript[ccR,23],
+    Description   -> "Right Lepton mixing: CosThetaR23,PDG-194"},
+  ccR13 == {
+    ParameterType -> Internal,
+    BlockName     -> MNSBLOCK,
+    OrderBlock    -> 12,
+    Value         -> Sqrt[1-ssR13^2],
+    TeX           -> Subscript[ccR,13],
+    Description   -> "Right Lepton mixing: CosThetaR13,PDG-194"},
+
   CKML == {
     Indices     -> {Index[Generation],Index[Generation]},
     TensorClass -> CKML,
@@ -1134,22 +1239,33 @@ M$Parameters = {
                     CKMR[3,1] ->  sR12*sR23-cR12*cR23*sR13 Exp[I delR13], CKMR[3,2] -> -cR12*sR23-sR12*cR23*sR13 Exp[I delR13], CKMR[3,3] -> cR23*cR13},
     TeX         -> Superscript[VR,CKM],
     Description -> "Right CKM-Matrix"},
+(*
+  MNSTB == {
+    ParameterType -> Internal,
+    Indices       -> {Index[Generation],Index[Generation]},
+    Unitary       -> True,
+    Value         -> {MNSTB[1,1] ->  Sqrt[2/3.] , MNSTB[1,2] ->  1/ Sqrt[3.], MNSTB[1,3] -> 0,
+                      MNSTB[2,1] -> -1/ Sqrt[6.], MNSTB[2,2] ->  1/ Sqrt[3.], MNSTB[2,3] ->   1/ Sqrt[2.],
+                      MNSTB[3,1] ->  1/ Sqrt[6.], MNSTB[3,2] -> -1/ Sqrt[3.], MNSTB[3,3] ->  1/ Sqrt[2.]},
+    TeX           -> Superscript[UL,MNS],
+    Description   -> "TriBimaximal MNS-Matrix"},
+*)
   MNSL == {
     ParameterType -> Internal,
     Indices       -> {Index[Generation],Index[Generation]},
     Unitary       -> True,
-    Value         -> {MNSL[1,1] ->  Sqrt[2/3.] , MNSL[1,2] ->  1/ Sqrt[3.], MNSL[1,3] -> 0,
-                      MNSL[2,1] -> -1/ Sqrt[6.], MNSL[2,2] ->  1/ Sqrt[3.], MNSL[2,3] ->   1/ Sqrt[2.],
-                      MNSL[3,1] ->  1/ Sqrt[6.], MNSL[3,2] -> -1/ Sqrt[3.], MNSL[3,3] ->  1/ Sqrt[2.]},
+    Value         -> {	MNSL[1,1] ->  ccL12*ccL13, MNSL[1,2] -> ssL12*cL13, MNSL[1,3] -> ssL13 Exp[-I delLCP],
+			MNSL[2,1] -> -ssL12*ccL23-ccL12*ssL23*ssL13 Exp[I delLCP], MNSL[2,2] ->  ccL12*ccL23-ssL12*ssL23*ssL13 Exp[I delLCP], MNSL[2,3] -> ssL23*ccL13,
+                    	MNSL[3,1] ->  ssL12*ssL23-ccL12*ccL23*ssL13 Exp[I delLCP], MNSL[3,2] -> -ccL12*ssL23-ssL12*ccL23*ssL13 Exp[I delLCP], MNSL[3,3] -> ccL23*ccL13},
     TeX           -> Superscript[UL,MNS],
     Description   -> "Left MNS-Matrix"},
   MNSR == {
     ParameterType -> Internal,
     Indices       -> {Index[Generation],Index[Generation]},
     Unitary       -> True,
-    Value         -> {MNSR[1,1] ->  Sqrt[2/3.] , MNSR[1,2] ->  1/ Sqrt[3.], MNSR[1,3] -> 0,
-                      MNSR[2,1] -> -1/ Sqrt[6.], MNSR[2,2] ->  1/ Sqrt[3.], MNSR[2,3] ->   1/ Sqrt[2.],
-                      MNSR[3,1] ->  1/ Sqrt[6.], MNSR[3,2] -> -1/ Sqrt[3.], MNSR[3,3] ->  1/ Sqrt[2.]},
+    Value         -> {	MNSR[1,1] ->  ccR12*ccR13, MNSR[1,2] -> ssR12*cR13, MNSR[1,3] -> ssR13 Exp[-I delRCP],
+			MNSR[2,1] -> -ssR12*ccR23-ccR12*ssR23*ssR13 Exp[I delRCP], MNSR[2,2] ->  ccR12*ccR23-ssR12*ssR23*ssR13 Exp[I delRCP], MNSR[2,3] -> ssR23*ccR13,
+                    	MNSR[3,1] ->  ssR12*ssR23-ccR12*ccR23*ssR13 Exp[I delRCP], MNSR[3,2] -> -ccR12*ssR23-ssR12*ccR23*ssR13 Exp[I delRCP], MNSR[3,3] -> ccR23*ccR13},
     TeX           -> Superscript[UR,MNS],
     Description   -> "Right MNS-Matrix"},
   aEW == {
