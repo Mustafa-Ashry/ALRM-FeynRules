@@ -6,7 +6,7 @@ This repository contains the following material
 
 3. (ALRM_LO.nb) Mathematica notebook which loads the model and performs basic checks .
 
-4. Madgraph UFO, CalcHEP, FeynArts, SHERPA, WHIZARD and ASperge model files (ALRM_LO_UFO, _CH, _FA, _SH, _WO, _MD).
+4. Madgraph UFO, CalcHEP, FeynArts, SHERPA, WHIZARD, ASperge model files and TeX files (ALRM_LO_UFO, _CH, _FA, _SH, _WO, _MD, _TeX).
 
 Please cite
 1. M. Ashry and S. Khalil, Phenomenological aspects of a TeV-scale alternative left-right model, Phys. Rev. D 91, 015009
