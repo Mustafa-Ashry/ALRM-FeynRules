@@ -1,12 +1,8 @@
 This repository contains the following material
 
-1. (ALRM_LO.fr) FeynRules alternative left-right symmetric model (ALRM) files at leading order.
-
-2. (ALRM_LO_hgg_haa.fr) FeynRules alternative left-right symmetric model files at leading order with Higgs-Gamma-Gamma and Higgs-Gluon-Gluon effective vertices.
-
-3. (ALRM_LO.nb) Mathematica notebook which loads the model and performs basic checks .
-
-4. Madgraph UFO, CalcHEP, FeynArts, SHERPA, WHIZARD, ASperge model files and TeX files (ALRM_LO_UFO, _CH, _FA, _SH, _WO, _MD, _TeX).
+1. (ALRM_LO.fr) FeynRules alternative left-right symmetric model (ALRM) files at leading order, with Higgs-Gamma-Gamma and Higgs-Gluon-Gluon effective vertices.
+2. (ALRM_LO.nb) Mathematica notebook which loads the model and performs basic checks .
+3. Madgraph UFO, CalcHEP, FeynArts, SHERPA, WHIZARD, ASperge model files and TeX files (ALRM_LO_UFO, _CH, _FA, _SH, _WO, _MD, _TeX).
 
 Please cite
 1. M. Ashry and S. Khalil, Phenomenological aspects of a TeV-scale alternative left-right model, Phys. Rev. D 91, 015009
