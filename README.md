@@ -6,7 +6,7 @@ This repository contains the following material
 
 Please cite
 1. M. Ashry and S. Khalil, Phenomenological aspects of a TeV-scale alternative left-right model, Phys. Rev. D 91, 015009
-2. M. Ashry, MSc Thesis, Cairo University (2015) [https://inspirehep.net/literature/2708563]
+2. M. Ashry, MSc Thesis, Cairo University (2015) [https://inspirehep.net/literature/2708563] [https://scholar.cu.edu.eg/?q=science_math_mashry/files/mashry_msc_thesis.pdf]
 
 Introduction to the Alternative Left-Right Symmetric Model (ALRM)
 
